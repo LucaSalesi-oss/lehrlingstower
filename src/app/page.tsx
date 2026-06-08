@@ -839,7 +839,7 @@ function Footer() {
             <h4 className="text-white font-semibold mb-4 text-sm">Rechtliches</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/impressum" className="hover:text-white transition-colors">
                   Impressum
                 </a>
               </li>
