@@ -483,27 +483,27 @@ function CostComparison() {
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Anzeigenplatz (mind. 6 Monate)</span>
+                <span className="text-sm text-foreground">Schüler:innen sehen Ihren Betrieb täglich — 190 Schultage lang</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Täglich vor hunderten Schüler:innen</span>
+                <span className="text-sm text-foreground">Nur regionale Betriebe — keine Konkurrenz aus anderen Branchen</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Kein Ad-Blocker, kein Wegklicken</span>
+                <span className="text-sm text-foreground">Schüler:innen scannen den QR-Code direkt auf Ihre Lehrstellenseite</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">QR-Code auf Ihre Karriereseite</span>
+                <span className="text-sm text-foreground">Vertrauensumfeld Schule — Jugendliche nehmen es ernst</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Inhalte jederzeit änderbar</span>
+                <span className="text-sm text-foreground">Startklar in wenigen Tagen — wir kümmern uns um alles</span>
               </li>
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Kein Personalaufwand</span>
+                <span className="text-sm text-foreground">Positionierung als moderner, attraktiver Lehrbetrieb</span>
               </li>
             </ul>
             <div className="border-t border-primary/20 pt-4">
