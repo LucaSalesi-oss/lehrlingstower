@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   description:
     "Digitale Stellenanzeigen in Schweizer Schulen. Erreichen Sie Schülerinnen und Schüler genau dort, wo sie sind.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-256.png", sizes: "256x256", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
 };
