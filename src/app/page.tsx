@@ -47,7 +47,7 @@ function VideoHero() {
         <span className="text-primary-light">Schule</span> bringen
       </h1>
       <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto drop-shadow">
-        Wir zeigen Schülerinnen und Schülern, welche Ausbildungsmöglichkeiten es in ihrer Region gibt — damit jeder Jugendliche eine echte Chance auf einen guten Start ins Berufsleben hat.
+        Lehrlingstower verbindet regionale Betriebe mit Schülerinnen und Schülern — direkt in der Schule, täglich sichtbar, ohne Umwege. Gut für Firmen. Gut für Schulen. Gut für die Jugend.
       </p>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronRight className="w-8 h-8 text-white/60 rotate-90" />
@@ -64,10 +64,10 @@ function ProblemSolution() {
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">Unsere Mission</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Jeder Schüler verdient eine echte Chance
+            Ausbildung sichtbar machen — für alle
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Wir glauben, dass kein Jugendlicher eine Lehrstelle verpassen sollte, nur weil er nie davon gehört hat. Deshalb bringen wir Ausbildungsangebote direkt in die Schule — kostenlos für Schulen, wertvoll für Schüler.
+            Wir bringen Betriebe und Schülerinnen zusammen — zum richtigen Zeitpunkt, am richtigen Ort. Firmen finden ihren Nachwuchs. Schulen unterstützen ihre Schüler. Und Jugendliche entdecken Chancen, die direkt vor ihrer Haustür liegen.
           </p>
         </ScrollReveal>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -76,13 +76,13 @@ function ProblemSolution() {
               Die Herausforderung
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              Viele Schüler wissen nicht, welche Ausbildungen es bei ihnen gibt
+              Lehrstellen bleiben unbesetzt — und Schüler verpassen ihre Chancen
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Jedes Jahr bleiben in der Schweiz tausende Lehrstellen unbesetzt — nicht weil die Jugendlichen kein Interesse haben, sondern weil sie schlicht nie davon erfahren. Klassische Stellenanzeigen in Zeitungen oder Online-Portalen erreichen Schülerinnen und Schüler kaum noch.
+              Jedes Jahr bleiben in der Schweiz tausende Lehrstellen unbesetzt. Gleichzeitig wissen viele Jugendliche nicht, welche Ausbildungsmöglichkeiten es in ihrer Region gibt. Klassische Stellenanzeigen in Zeitungen oder auf Online-Portalen erreichen die junge Zielgruppe kaum noch.
             </p>
             <p className="text-muted leading-relaxed">
-              Das Ergebnis: Jugendliche wählen den erstbesten Weg — obwohl es in ihrer Region tolle Ausbildungsplätze gäbe, die perfekt zu ihnen passen würden.
+              Für Betriebe bedeutet das: viel Aufwand, wenig Wirkung. Für Schülerinnen und Schüler bedeutet es: verpasste Chancen, die direkt vor ihrer Haustür liegen.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
@@ -90,13 +90,13 @@ function ProblemSolution() {
               Unsere Lösung
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              Wir zeigen Schülern ihre Möglichkeiten — direkt in der Schule
+              Eine Plattform — die für alle funktioniert
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Lehrlingstower stellt grosse Bildschirme in Schulgebäuden auf — ausschliesslich für regionale Ausbildungsplätze, Schnuppertage und Lehrstellenangebote. Keine Werbung, kein Ablenkung — nur echte Berufschancen für Schülerinnen und Schüler aus der Region.
+              Lehrlingstower stellt grosse Full-HD-Bildschirme kostenlos in Schulen auf — ausschliesslich für regionale Ausbildungsplätze und Schnuppertage. Für Schulen entsteht kein Aufwand und keine Kosten. Für Schülerinnen und Schüler eine tägliche Inspiration für ihre Zukunft.
             </p>
             <p className="text-muted leading-relaxed">
-              Für Schulen ist das Angebot kostenlos und ohne Aufwand. Für Schülerinnen und Schüler bedeutet es: Sie sehen täglich, welche Türen ihnen offen stehen — genau dann, wenn sie anfangen, über ihre Zukunft nachzudenken.
+              Für Betriebe bedeutet das: maximale Sichtbarkeit bei der richtigen Zielgruppe, zur richtigen Zeit — ohne Streuverluste, ohne Algorithmen, ohne Ad-Blocker. Einfach wirkungsvoll.
             </p>
           </ScrollReveal>
         </div>
@@ -116,16 +116,16 @@ function AboutSection() {
               Über Lehrlingstower
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-8">
-              Damit kein Jugendlicher eine Chance verpasst
+              Wir schaffen Verbindungen, die wirklich zählen
             </h2>
             <p className="text-lg text-teal-100 leading-relaxed mb-6">
-              Hinter Lehrlingstower steckt eine einfache Überzeugung: Jedes Kind verdient einen guten Start ins Berufsleben. Deshalb bringen wir regionale Ausbildungsangebote direkt dorthin, wo Schülerinnen und Schüler täglich sind — in ihre Schule.
+              Lehrlingstower ist mehr als Werbefläche. Wir sind überzeugt: Wenn Schülerinnen und Schüler früh wissen, welche Ausbildungsmöglichkeiten es in ihrer Region gibt, treffen sie bessere Entscheidungen — für sich und für die lokale Wirtschaft.
             </p>
             <p className="text-lg text-teal-100 leading-relaxed mb-6">
-              Für Schulen entstehen dabei keinerlei Kosten und kein organisatorischer Aufwand. Die Bildschirme zeigen ausschliesslich echte Ausbildungsplätze und Schnuppertage aus der Region — keine Werbung, nichts Fremdes.
+              Deshalb stellen wir unsere Bildschirme kostenlos in Schulen auf und zeigen ausschliesslich echte Ausbildungsplätze und Schnuppertage aus der Region. Keine Werbung. Kein Aufwand für die Schule. Nur echter Mehrwert — für Schüler und für Betriebe gleichermassen.
             </p>
             <p className="text-lg text-white font-medium leading-relaxed">
-              Wir glauben: Wenn Schülerinnen und Schüler wissen, was möglich ist, treffen sie bessere Entscheidungen für ihre Zukunft.
+              Betriebe gewinnen motivierten Nachwuchs. Schulen unterstützen ihre Schüler auf dem Weg ins Berufsleben. Und Jugendliche bekommen die Chance, die sie verdienen.
             </p>
           </div>
           <div className="flex justify-center">
@@ -284,7 +284,7 @@ function Benefits() {
             Warum Lehrlingstower?
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Gut für Schüler. Gut für Schulen. Gut für die Region.
+            Was Betriebe überzeugt — und warum Schulen gerne mitmachen
           </p>
         </ScrollReveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
