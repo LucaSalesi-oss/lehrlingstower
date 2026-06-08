@@ -844,12 +844,12 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/datenschutz" className="hover:text-white transition-colors">
                   Datenschutz
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/agb" className="hover:text-white transition-colors">
                   AGB
                 </a>
               </li>
