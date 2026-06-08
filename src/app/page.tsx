@@ -441,7 +441,16 @@ function CostComparison() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+        <div className="relative grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+          <div className="absolute -right-16 xl:-right-32 top-1/2 -translate-y-1/2 w-48 xl:w-64 opacity-20 pointer-events-none hidden lg:block">
+            <Image
+              src="/students-kiosk.jpg"
+              alt=""
+              width={400}
+              height={267}
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
           <ScrollReveal className="flex">
           <div className="bg-white rounded-2xl p-8 border-2 border-rose-200 shadow-sm flex flex-col w-full">
             <div className="flex items-center gap-3 mb-6">
