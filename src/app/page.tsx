@@ -804,7 +804,7 @@ function Footer() {
                 alt="Lehrlingstower.ch"
                 width={240}
                 height={70}
-                className="h-12 w-auto brightness-0 invert"
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-sm leading-relaxed max-w-sm">
