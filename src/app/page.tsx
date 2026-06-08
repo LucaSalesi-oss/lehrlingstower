@@ -94,7 +94,7 @@ function ProblemSolution() {
               Lehrlingstower bringt Ihre Lehrstelle genau dorthin, wo Jugendliche täglich sind
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Mit der Lehrlingstower präsentieren Sie Ihre offenen Ausbildungsplätze auf grossen Bildschirmen direkt in Schweizer Schulen — ausschliesslich für regionale Betriebe, ausschliesslich für Ausbildungsplätze. Kein Algorithmus, kein Wegzappen — Ihr Ausbildungsangebot ist genau dort, wo Schülerinnen und Schüler täglich sind.
+              Mit dem Lehrlingstower präsentieren Sie Ihre offenen Ausbildungsplätze auf grossen Bildschirmen direkt in Schweizer Schulen — ausschliesslich für regionale Betriebe, ausschliesslich für Ausbildungsplätze. Kein Algorithmus, kein Wegzappen — Ihr Ausbildungsangebot ist genau dort, wo Schülerinnen und Schüler täglich sind.
             </p>
             <p className="text-muted leading-relaxed">
               So erreichen Sie genau die Jugendlichen, die gerade aktiv über ihre berufliche Zukunft nachdenken — im richtigen Moment, am richtigen Ort.
