@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "Lehrlingstower — Lehrstellen direkt in die Schule bringen",
   description:
     "Digitale Stellenanzeigen in Schweizer Schulen. Erreichen Sie Schülerinnen und Schüler genau dort, wo sie sind.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
