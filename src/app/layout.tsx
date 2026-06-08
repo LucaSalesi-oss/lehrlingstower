@@ -32,8 +32,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <Script id="scroll-top" strategy="beforeInteractive">{`
           if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+          if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname);
+          }
           window.scrollTo(0, 0);
-          window.addEventListener('pageshow', function(e) { window.scrollTo(0, 0); });
         `}</Script>
         {children}
       </body>
