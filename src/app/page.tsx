@@ -857,7 +857,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-800 mt-10 pt-6 text-xs text-center">
-          &copy; {new Date().getFullYear()} Lehrlingstower GmbH. Alle Rechte
+          &copy; {new Date().getFullYear()} Lehrlingstower. Alle Rechte
           vorbehalten.
         </div>
       </div>
