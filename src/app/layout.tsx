@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,10 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${geistSans.variable} h-full antialiased`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: 'history.scrollRestoration="manual";window.scrollTo(0,0);' }} />
-      </head>
       <body className="min-h-full flex flex-col font-sans">
+        <Script id="scroll-top" strategy="beforeInteractive">{`
+          if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+          window.scrollTo(0, 0);
+          window.addEventListener('pageshow', function(e) { window.scrollTo(0, 0); });
+        `}</Script>
         {children}
       </body>
     </html>
