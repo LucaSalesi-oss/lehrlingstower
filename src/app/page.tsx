@@ -705,7 +705,7 @@ function Contact() {
               Termin vereinbaren
             </h3>
             <form className="space-y-4" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="18327b7e-7999-4966-b29b-244af4f5eaf0" />
+              <input type="hidden" name="access_key" value="3007b246-f376-47f6-85f7-ad7223ab31d8" />
               <input type="hidden" name="subject" value="Neue Anfrage von Lehrlingstower.ch" />
               <input type="hidden" name="redirect" value="false" />
               <div className="grid sm:grid-cols-2 gap-4">
