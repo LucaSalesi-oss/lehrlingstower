@@ -704,7 +704,10 @@ function Contact() {
             <h3 className="text-xl font-bold text-foreground mb-6">
               Termin vereinbaren
             </h3>
-            <form className="space-y-4">
+            <form className="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="13827b7e-7999-4966-b29b-244af4f5eaf0" />
+              <input type="hidden" name="subject" value="Neue Anfrage von Lehrlingstower.ch" />
+              <input type="hidden" name="redirect" value="false" />
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">
@@ -712,6 +715,8 @@ function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="Vorname"
+                    required
                     className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                     placeholder="Max"
                   />
@@ -722,6 +727,8 @@ function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="Nachname"
+                    required
                     className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                     placeholder="Muster"
                   />
@@ -733,6 +740,7 @@ function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="Firma"
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   placeholder="Muster AG"
                 />
@@ -743,6 +751,8 @@ function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   placeholder="max@muster.ch"
                 />
@@ -753,6 +763,7 @@ function Contact() {
                 </label>
                 <input
                   type="tel"
+                  name="Telefon"
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                   placeholder="+41 79 000 00 00"
                 />
@@ -763,6 +774,7 @@ function Contact() {
                 </label>
                 <textarea
                   rows={3}
+                  name="Nachricht"
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
                   placeholder="Ich interessiere mich für..."
                 />
