@@ -799,9 +799,13 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="mb-4">
-              <span className="text-xl font-bold text-white">
-                Lehrlings<span className="text-primary-light">tower</span>.ch
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Lehrlingstower.ch"
+                width={240}
+                height={70}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm leading-relaxed max-w-sm">
               Digitale Stellenanzeigen in Schweizer Schulen.
