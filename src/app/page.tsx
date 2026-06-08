@@ -47,8 +47,7 @@ function VideoHero() {
         <span className="text-primary-light">Schule</span> bringen
       </h1>
       <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto drop-shadow">
-        Digitale Bildschirme in Schweizer Schulen — erreichen Sie
-        Schülerinnen und Schüler mit Ihrem Ausbildungsangebot genau dort, wo sie ihre Zukunft planen.
+        Wir zeigen Schülerinnen und Schülern, welche Ausbildungsmöglichkeiten es in ihrer Region gibt — damit jeder Jugendliche eine echte Chance auf einen guten Start ins Berufsleben hat.
       </p>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronRight className="w-8 h-8 text-white/60 rotate-90" />
@@ -65,10 +64,10 @@ function ProblemSolution() {
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">Unsere Mission</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Was uns antreibt
+            Jeder Schüler verdient eine echte Chance
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Jeder Jugendliche soll wissen, welche Ausbildungsmöglichkeiten es in seiner Region gibt.
+            Wir glauben, dass kein Jugendlicher eine Lehrstelle verpassen sollte, nur weil er nie davon gehört hat. Deshalb bringen wir Ausbildungsangebote direkt in die Schule — kostenlos für Schulen, wertvoll für Schüler.
           </p>
         </ScrollReveal>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -77,13 +76,13 @@ function ProblemSolution() {
               Die Herausforderung
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              Lehrstellen bleiben unbesetzt — obwohl Betriebe dringend Nachwuchs suchen
+              Viele Schüler wissen nicht, welche Ausbildungen es bei ihnen gibt
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Jedes Jahr bleiben in der Schweiz tausende Lehrstellen unbesetzt. Gleichzeitig wissen viele Jugendliche nicht, welche Ausbildungsmöglichkeiten es in ihrer Region gibt. Klassische Stellenanzeigen in Zeitungen oder Online-Portalen erreichen die junge Zielgruppe kaum noch.
+              Jedes Jahr bleiben in der Schweiz tausende Lehrstellen unbesetzt — nicht weil die Jugendlichen kein Interesse haben, sondern weil sie schlicht nie davon erfahren. Klassische Stellenanzeigen in Zeitungen oder Online-Portalen erreichen Schülerinnen und Schüler kaum noch.
             </p>
             <p className="text-muted leading-relaxed">
-              Die Folge: Betriebe investieren viel Geld in Recruiting, ohne die richtigen Kandidaten zu erreichen. Und Jugendliche verpassen Chancen, die direkt vor ihrer Haustür liegen.
+              Das Ergebnis: Jugendliche wählen den erstbesten Weg — obwohl es in ihrer Region tolle Ausbildungsplätze gäbe, die perfekt zu ihnen passen würden.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
@@ -91,13 +90,13 @@ function ProblemSolution() {
               Unsere Lösung
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              Lehrlingstower bringt Ihre Lehrstelle genau dorthin, wo Jugendliche täglich sind
+              Wir zeigen Schülern ihre Möglichkeiten — direkt in der Schule
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Mit dem Lehrlingstower präsentieren Sie Ihre offenen Ausbildungsplätze auf grossen Bildschirmen direkt in Schweizer Schulen — ausschliesslich für regionale Betriebe, ausschliesslich für Ausbildungsplätze. Kein Algorithmus, kein Wegzappen — Ihr Ausbildungsangebot ist genau dort, wo Schülerinnen und Schüler täglich sind.
+              Lehrlingstower stellt grosse Bildschirme in Schulgebäuden auf — ausschliesslich für regionale Ausbildungsplätze, Schnuppertage und Lehrstellenangebote. Keine Werbung, kein Ablenkung — nur echte Berufschancen für Schülerinnen und Schüler aus der Region.
             </p>
             <p className="text-muted leading-relaxed">
-              So erreichen Sie genau die Jugendlichen, die gerade aktiv über ihre berufliche Zukunft nachdenken — im richtigen Moment, am richtigen Ort.
+              Für Schulen ist das Angebot kostenlos und ohne Aufwand. Für Schülerinnen und Schüler bedeutet es: Sie sehen täglich, welche Türen ihnen offen stehen — genau dann, wenn sie anfangen, über ihre Zukunft nachzudenken.
             </p>
           </ScrollReveal>
         </div>
@@ -117,16 +116,16 @@ function AboutSection() {
               Über Lehrlingstower
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-8">
-              Wir verbinden Lehrbetriebe mit der nächsten Generation
+              Damit kein Jugendlicher eine Chance verpasst
             </h2>
             <p className="text-lg text-teal-100 leading-relaxed mb-6">
-              Lehrlingstower ist eine Plattform, die regionale Ausbildungsbetriebe direkt mit Schülerinnen und Schülern verbindet. Wir stellen Full-HD-Bildschirme in Schulgebäuden auf — ausschliesslich für Ausbildungsplätze, Schnuppertage und Lehrstellenangebote aus der Region.
+              Hinter Lehrlingstower steckt eine einfache Überzeugung: Jedes Kind verdient einen guten Start ins Berufsleben. Deshalb bringen wir regionale Ausbildungsangebote direkt dorthin, wo Schülerinnen und Schüler täglich sind — in ihre Schule.
             </p>
             <p className="text-lg text-teal-100 leading-relaxed mb-6">
-              Unser Ziel: Jeder Jugendliche in der Schweiz soll wissen, welche Ausbildungsmöglichkeiten es in seiner Region gibt. Und jeder Betrieb soll die Möglichkeit haben, sich als attraktiver Lehrbetrieb zu präsentieren — ohne riesiges Marketingbudget.
+              Für Schulen entstehen dabei keinerlei Kosten und kein organisatorischer Aufwand. Die Bildschirme zeigen ausschliesslich echte Ausbildungsplätze und Schnuppertage aus der Region — keine Werbung, nichts Fremdes.
             </p>
             <p className="text-lg text-white font-medium leading-relaxed">
-              Ab CHF 129.– pro Monat zeigen wir Ihren Ausbildungsplatz täglich hunderten Schülerinnen und Schülern — regional, direkt und ohne Umwege.
+              Wir glauben: Wenn Schülerinnen und Schüler wissen, was möglich ist, treffen sie bessere Entscheidungen für ihre Zukunft.
             </p>
           </div>
           <div className="flex justify-center">
@@ -285,8 +284,7 @@ function Benefits() {
             Warum Lehrlingstower?
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Digitales Recruiting dort, wo die nächste Generation ihre Zukunft
-            plant
+            Gut für Schüler. Gut für Schulen. Gut für die Region.
           </p>
         </ScrollReveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
