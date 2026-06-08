@@ -543,6 +543,15 @@ function Pricing() {
   return (
     <section id="preise" className="relative py-24 bg-gradient-to-br from-teal-50/50 via-white to-amber-50/30 overflow-hidden">
       <div className="absolute bottom-0 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-72 xl:w-96 pointer-events-none hidden lg:block">
+        <Image
+          src="/maskottchen.png"
+          alt="Lehrlingstower Maskottchen"
+          width={400}
+          height={400}
+          className="w-full h-auto"
+        />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
