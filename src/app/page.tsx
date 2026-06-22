@@ -395,7 +395,7 @@ function StatsBanner() {
     { value: "190", label: "Schultage pro Jahr erreicht", color: "text-teal-300" },
     { value: "500+", label: "Schüler pro Schule täglich", color: "text-amber-300" },
     { value: "0", label: "Personalaufwand für Sie", color: "text-violet-300" },
-    { value: "129.–", label: "CHF pro Monat", color: "text-rose-300" },
+    { value: "100%", label: "Kostenlos für Schulen", color: "text-rose-300" },
   ];
 
   return (
@@ -423,7 +423,7 @@ function ComparisonTable() {
     { feature: "Keine Streuverluste", stifisaeule: true, print: false, online: false },
     { feature: "Kein Ad-Blocker", stifisaeule: true, print: true, online: false },
     { feature: "Inhalte jederzeit änderbar", stifisaeule: true, print: false, online: true },
-    { feature: "Günstig ab CHF 129.–/Monat", stifisaeule: true, print: false, online: true },
+    { feature: "Kostenlos für Schulen", stifisaeule: true, print: false, online: false },
   ];
 
   return (
