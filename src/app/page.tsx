@@ -588,10 +588,6 @@ function CostComparison() {
               </li>
             </ul>
             <div className="border-t border-primary/20 pt-4">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-foreground">Total 6 Monate</span>
-                <span className="text-2xl font-bold text-primary">CHF 774.–</span>
-              </div>
               <p className="text-xs text-muted mt-2">Jeden Schultag sichtbar — ein ganzes Halbjahr</p>
             </div>
           </div>
@@ -643,14 +639,6 @@ function FAQ() {
     {
       q: "Kann die Schule den Bildschirm für eigene Inhalte nutzen?",
       a: "Ja. Ein fester Teil der Anzeigezeit ist für die Schule reserviert. Schulen können diesen Bereich für eigene Mitteilungen, Stundenpläne, Veranstaltungen oder andere schulinterne Informationen nutzen. Wir kümmern uns um die technische Umsetzung.",
-    },
-    {
-      q: "Wie lange ist die Mindestlaufzeit?",
-      a: "Die Mindestlaufzeit beträgt 6 Monate. Möchten Sie den Vertrag nicht verlängern, müssen Sie spätestens 1 Monat vor Ablauf kündigen — andernfalls verlängert sich der Vertrag automatisch um weitere 6 Monate.",
-    },
-    {
-      q: "Wie funktioniert die Bezahlung?",
-      a: "Der Gesamtbetrag von CHF 774.– wird bei Vertragsabschluss direkt für das gesamte Halbjahr in Rechnung gestellt. Sie erhalten eine Rechnung, die innert 30 Tagen zu begleichen ist. Es gibt keine monatliche Abrechnung.",
     },
   ];
 
