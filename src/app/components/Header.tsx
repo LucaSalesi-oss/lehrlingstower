@@ -6,11 +6,10 @@ import { ChevronRight, X, Menu } from "lucide-react";
 import ScrollHeader from "./ScrollHeader";
 
 const navLinks = [
+  { href: "#fuer-schulen", label: "Für Schulen" },
   { href: "#so-funktionierts", label: "So funktionierts" },
   { href: "#vorteile", label: "Vorteile" },
-  { href: "#preise", label: "Preise" },
   { href: "#faq", label: "FAQ" },
-  { href: "#kontakt", label: "Kontakt" },
 ];
 
 export default function Header() {

@@ -19,6 +19,9 @@ import {
   Zap,
   Target,
   TrendingUp,
+  Gift,
+  Tv,
+  CalendarDays,
 } from "lucide-react";
 
 function VideoHero() {
@@ -138,6 +141,84 @@ function AboutSection() {
             />
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ForSchools() {
+  const benefits = [
+    {
+      icon: Gift,
+      title: "Komplett kostenlos",
+      description:
+        "Für Schulen entstehen keinerlei Kosten. Wir liefern, installieren und betreiben den Bildschirm vollständig auf eigene Rechnung. Benötigt wird nur ein geeigneter Standort mit Stromanschluss.",
+      colorLight: "bg-teal-50",
+      colorText: "text-teal-600",
+    },
+    {
+      icon: Tv,
+      title: "Bildschirm mitbenutzen",
+      description:
+        "Die Schule erhält feste Anzeigezeit auf dem Display — für eigene Mitteilungen, Veranstaltungshinweise, Stundenpläne oder schulinterne Informationen. Ein modernes digitales Kommunikationsmedium, kostenlos.",
+      colorLight: "bg-violet-50",
+      colorText: "text-violet-600",
+    },
+    {
+      icon: CalendarDays,
+      title: "Kein Aufwand",
+      description:
+        "Wir kümmern uns um alles: Inhalt, Technik, Betrieb. Die Schule muss nichts organisieren, nichts installieren und nichts verwalten. Einfach Platz bereitstellen — der Rest läuft von selbst.",
+      colorLight: "bg-amber-50",
+      colorText: "text-amber-600",
+    },
+  ];
+
+  return (
+    <section id="fuer-schulen" className="py-24 bg-gradient-to-b from-teal-50/40 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">Für Schulen</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Ein modernes Display — kostenlos für Ihre Schule
+          </h2>
+          <p className="mt-4 text-lg text-muted">
+            Lehrlingstower ist kein Werbeauftritt, der Schulen etwas aufzwingt. Wir möchten einen echten Mehrwert schaffen — für Schülerinnen und Schüler, aber auch für die Schule selbst.
+          </p>
+        </ScrollReveal>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {benefits.map((b, i) => (
+            <ScrollReveal key={b.title} delay={i * 150} className="flex">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col w-full">
+                <div className={`w-12 h-12 ${b.colorLight} rounded-xl flex items-center justify-center mb-5`}>
+                  <b.icon className={`w-6 h-6 ${b.colorText}`} />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-3">{b.title}</h3>
+                <p className="text-sm text-muted leading-relaxed">{b.description}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <ScrollReveal>
+          <div className="bg-gradient-to-br from-primary/5 to-teal-50 rounded-2xl p-8 sm:p-10 border border-primary/10 max-w-3xl mx-auto text-center">
+            <School className="w-10 h-10 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-foreground mb-3">
+              Interesse? Wir kommen gerne vorbei.
+            </h3>
+            <p className="text-muted mb-6 leading-relaxed">
+              Sind Sie Schulleitung oder Sekretariat und möchten mehr erfahren? Schreiben Sie uns kurz — wir erklären das Konzept in 15 Minuten und beantworten alle Ihre Fragen.
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+            >
+              Kontakt aufnehmen
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -532,79 +613,6 @@ function CostComparison() {
   );
 }
 
-function Pricing() {
-  const features = [
-    "Ausbildungsplatz auf 1.80m Full-HD-Bildschirm in der Schule",
-    "QR-Code zur Weiterleitung auf Ihre Lehrstellenausschreibung",
-    "Inhalte jederzeit aktualisierbar",
-    "Nur regionale Betriebe — nur Ausbildungsplätze",
-  ];
-
-  return (
-    <section id="preise" className="relative py-24 bg-gradient-to-br from-teal-50/50 via-white to-amber-50/30 overflow-hidden">
-      <div className="absolute bottom-0 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-72 xl:w-96 pointer-events-none hidden lg:block">
-        <Image
-          src="/maskottchen.png"
-          alt="Lehrlingstower Maskottchen"
-          width={400}
-          height={400}
-          className="w-full h-auto"
-        />
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Einfache, transparente Preise
-          </h2>
-          <p className="mt-4 text-lg text-muted">
-            Keine versteckten Kosten — nur Ausbildungsplätze, nur regionale Betriebe
-          </p>
-        </ScrollReveal>
-        <ScrollScale className="max-w-lg mx-auto">
-          <div className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-1">
-            <div className="bg-white rounded-xl p-8 sm:p-10">
-              <div className="text-center mb-8">
-                <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
-                  Pro Ausbildungsplatz auf dem Bildschirm
-                </p>
-                <div className="flex items-end justify-center gap-1">
-                  <span className="text-5xl font-bold text-foreground">
-                    CHF 129.–
-                  </span>
-                  <span className="text-muted text-lg mb-1">/Monat</span>
-                </div>
-                <p className="text-sm mt-2">
-                  <span className="inline-block bg-amber-100 text-amber-700 font-medium px-3 py-1 rounded-full text-xs">
-                    Entspricht nur CHF 6.45 pro Schultag
-                  </span>
-                </p>
-              </div>
-              <ul className="space-y-3 mb-10">
-                {features.map((f) => (
-                  <li key={f} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="text-sm text-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#kontakt"
-                className="block w-full text-center bg-primary text-white py-4 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
-              >
-                Jetzt Termin vereinbaren
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-xs text-muted mt-4">
-            Kontaktieren Sie uns für individuelle Angebote
-          </p>
-        </ScrollScale>
-      </div>
-    </section>
-  );
-}
-
 
 function FAQ() {
   const faqs = [
@@ -627,6 +635,14 @@ function FAQ() {
     {
       q: "Kann ich mein Ausbildungsangebot jederzeit aktualisieren?",
       a: "Ja, Sie können Ihre Inhalte jederzeit aktualisieren — Texte, Bilder und Videos.",
+    },
+    {
+      q: "Was hat die Schule davon?",
+      a: "Die Schule erhält einen kostenlosen Full-HD-Bildschirm — inklusive Lieferung, Installation und Betrieb. Zusätzlich steht der Schule feste Anzeigezeit zur Verfügung, die sie für eigene Mitteilungen, Veranstaltungshinweise oder Informationen nutzen kann. Für die Schule entsteht kein Aufwand und keine Kosten.",
+    },
+    {
+      q: "Kann die Schule den Bildschirm für eigene Inhalte nutzen?",
+      a: "Ja. Ein fester Teil der Anzeigezeit ist für die Schule reserviert. Schulen können diesen Bereich für eigene Mitteilungen, Stundenpläne, Veranstaltungen oder andere schulinterne Informationen nutzen. Wir kümmern uns um die technische Umsetzung.",
     },
     {
       q: "Wie lange ist die Mindestlaufzeit?",
@@ -835,11 +851,6 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#preise" className="hover:text-white transition-colors">
-                  Preise
-                </a>
-              </li>
-              <li>
                 <a href="#faq" className="hover:text-white transition-colors">
                   FAQ
                 </a>
@@ -883,12 +894,12 @@ export default function Home() {
       <main>
         <VideoHero />
         <ProblemSolution />
+        <ForSchools />
         <HowItWorks />
         <Benefits />
         <StatsBanner />
         <AboutSection />
         <CostComparison />
-        <Pricing />
         <FAQ />
         <Contact />
       </main>
