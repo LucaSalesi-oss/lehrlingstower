@@ -560,7 +560,7 @@ function CostComparison() {
               </div>
               <h3 className="text-xl font-bold text-foreground">Lehrlingstower</h3>
             </div>
-            <p className="text-sm text-muted mb-6">6 Monate Dauerpräsenz an Schulen:</p>
+            <p className="text-sm text-muted mb-6">12 Monate Dauerpräsenz an Schulen:</p>
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-center gap-3">
                 <Check className="w-4 h-4 text-primary shrink-0" />
@@ -588,7 +588,7 @@ function CostComparison() {
               </li>
             </ul>
             <div className="border-t border-primary/20 pt-4">
-              <p className="text-xs text-muted mt-2">Jeden Schultag sichtbar — ein ganzes Halbjahr</p>
+              <p className="text-xs text-muted mt-2">Jeden Schultag sichtbar — ein ganzes Schuljahr</p>
             </div>
           </div>
           </ScrollReveal>
