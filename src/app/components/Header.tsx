@@ -7,7 +7,7 @@ import ScrollHeader from "./ScrollHeader";
 import { useLanguage, Lang } from "../i18n/LanguageContext";
 import translations from "../i18n/translations";
 
-const langFlags: Record<Lang, string> = { de: "🇩🇪", fr: "🇫🇷", it: "🇮🇹" };
+const langFlags: Record<Lang, string> = { de: "🇨🇭", fr: "🇨🇭", it: "🇨🇭" };
 const langLabels: Record<Lang, string> = { de: "DE", fr: "FR", it: "IT" };
 
 export default function Header() {
