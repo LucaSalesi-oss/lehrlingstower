@@ -4,11 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight, X, Menu } from "lucide-react";
 import ScrollHeader from "./ScrollHeader";
-import { useLanguage, Lang } from "../i18n/LanguageContext";
+import { useLanguage } from "../i18n/LanguageContext";
 import translations from "../i18n/translations";
-
-const langFlags: Record<Lang, string> = { de: "", fr: "🇨🇭", it: "🇨🇭" };
-const langLabels: Record<Lang, string> = { de: "DE", fr: "FR", it: "IT" };
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,22 +52,6 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-1 text-sm font-medium">
-              {(["de", "fr", "it"] as Lang[]).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-sm transition-colors ${
-                    lang === l
-                      ? "bg-primary text-white font-bold"
-                      : "text-slate-500 hover:text-primary hover:bg-slate-100"
-                  }`}
-                >
-                  {langFlags[l] && <span className="text-base leading-none">{langFlags[l]}</span>}
-                  {langLabels[l]}
-                </button>
-              ))}
-            </div>
             <a
               href="#kontakt"
               className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors"
@@ -108,23 +89,6 @@ export default function Header() {
               >
                 <X className="w-5 h-5 text-slate-600" />
               </button>
-            </div>
-
-            <div className="flex items-center justify-center gap-2 px-6 pt-4">
-              {(["de", "fr", "it"] as Lang[]).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => { setLang(l); closeMenu(); }}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                    lang === l
-                      ? "bg-primary text-white"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
-                >
-                  {langFlags[l] && <span className="text-base leading-none">{langFlags[l]}</span>}
-                  {langLabels[l]}
-                </button>
-              ))}
             </div>
 
             <nav className="flex flex-col px-4 py-6 gap-1 flex-1">
