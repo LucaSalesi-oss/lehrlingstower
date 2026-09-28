@@ -393,6 +393,7 @@ function Benefits() {
 function StatsBanner() {
   const stats = [
     { value: "190", label: "Schultage pro Jahr erreicht", color: "text-teal-300" },
+    { value: "1.80m", label: "Full-HD Bildschirm", color: "text-amber-300" },
     { value: "0", label: "Personalaufwand für Sie", color: "text-violet-300" },
     { value: "100%", label: "Kostenlos für Schulen", color: "text-rose-300" },
   ];
