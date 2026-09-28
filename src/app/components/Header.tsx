@@ -7,6 +7,7 @@ import ScrollHeader from "./ScrollHeader";
 import { useLanguage, Lang } from "../i18n/LanguageContext";
 import translations from "../i18n/translations";
 
+const langFlags: Record<Lang, string> = { de: "🇩🇪", fr: "🇫🇷", it: "🇮🇹" };
 const langLabels: Record<Lang, string> = { de: "DE", fr: "FR", it: "IT" };
 
 export default function Header() {
@@ -59,12 +60,13 @@ export default function Header() {
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`px-2.5 py-1 rounded-md text-sm transition-colors ${
+                  className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-sm transition-colors ${
                     lang === l
                       ? "bg-primary text-white font-bold"
                       : "text-slate-500 hover:text-primary hover:bg-slate-100"
                   }`}
                 >
+                  <span className="text-base leading-none">{langFlags[l]}</span>
                   {langLabels[l]}
                 </button>
               ))}
@@ -113,12 +115,13 @@ export default function Header() {
                 <button
                   key={l}
                   onClick={() => { setLang(l); closeMenu(); }}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                     lang === l
                       ? "bg-primary text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                   }`}
                 >
+                  <span className="text-base leading-none">{langFlags[l]}</span>
                   {langLabels[l]}
                 </button>
               ))}
