@@ -22,20 +22,3 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-.lang-active {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.lang-inactive {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.scrolled .lang-active {
-  background: var(--color-primary);
-  color: white;
-}
-
-.scrolled .lang-inactive {
-  color: var(--color-muted);
-}

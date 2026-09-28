@@ -59,10 +59,10 @@ export default function Header() {
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`px-2 py-1 rounded transition-colors ${
+                  className={`px-2.5 py-1 rounded-md text-sm transition-colors ${
                     lang === l
-                      ? "lang-active text-white font-bold"
-                      : "lang-inactive hover:text-white"
+                      ? "bg-primary text-white font-bold"
+                      : "text-slate-500 hover:text-primary hover:bg-slate-100"
                   }`}
                 >
                   {langLabels[l]}
