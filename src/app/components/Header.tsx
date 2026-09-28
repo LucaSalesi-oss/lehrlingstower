@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight, X, Menu } from "lucide-react";
 import ScrollHeader from "./ScrollHeader";
-import { useLanguage } from "../i18n/LanguageContext";
+import { useLanguage, Lang } from "../i18n/LanguageContext";
 import translations from "../i18n/translations";
+
+const langs: Lang[] = ["de", "fr", "it"];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,6 +54,21 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-1 text-sm font-medium">
+              {langs.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-2.5 py-1 rounded-md transition-colors ${
+                    lang === l
+                      ? "bg-primary text-white font-bold"
+                      : "text-slate-500 hover:text-primary hover:bg-slate-100"
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
             <a
               href="#kontakt"
               className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors"
@@ -89,6 +106,22 @@ export default function Header() {
               >
                 <X className="w-5 h-5 text-slate-600" />
               </button>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 px-6 pt-4">
+              {langs.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => { setLang(l); closeMenu(); }}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                    lang === l
+                      ? "bg-primary text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
             </div>
 
             <nav className="flex flex-col px-4 py-6 gap-1 flex-1">
