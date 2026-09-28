@@ -158,8 +158,8 @@ const translations = {
       ],
     },
     contact: {
-      title: "Bereit, die nächsten Lernenden zu finden?",
-      subtitle: "Vereinbaren Sie jetzt einen kostenlosen Beratungstermin und erfahren Sie, wie die Lehrlingstower Ihr Recruiting transformiert.",
+      title: "Interesse geweckt?",
+      subtitle: "Ob Schule oder Betrieb — wir erklären Ihnen gerne, wie Lehrlingstower funktioniert und was es für Sie bedeutet. Vereinbaren Sie jetzt einen kostenlosen Beratungstermin.",
       email: "E-Mail",
       standort: "Standort",
       land: "Schweiz",
@@ -343,8 +343,8 @@ const translations = {
       ],
     },
     contact: {
-      title: "Prêt à trouver vos prochains apprentis ?",
-      subtitle: "Prenez rendez-vous gratuitement et découvrez comment Lehrlingstower transforme votre recrutement.",
+      title: "Intéressé(e) ?",
+      subtitle: "Que vous soyez une école ou une entreprise — nous vous expliquons volontiers comment fonctionne Lehrlingstower et ce que cela signifie pour vous. Prenez rendez-vous gratuitement.",
       email: "E-mail",
       standort: "Localisation",
       land: "Suisse",
@@ -528,8 +528,8 @@ const translations = {
       ],
     },
     contact: {
-      title: "Pronti a trovare i vostri prossimi apprendisti?",
-      subtitle: "Fissate subito un appuntamento gratuito e scoprite come Lehrlingstower trasforma il vostro reclutamento.",
+      title: "Vi abbiamo incuriosito?",
+      subtitle: "Che siate una scuola o un'azienda — vi spieghiamo volentieri come funziona Lehrlingstower e cosa significa per voi. Fissate subito un appuntamento gratuito.",
       email: "E-mail",
       standort: "Sede",
       land: "Svizzera",
