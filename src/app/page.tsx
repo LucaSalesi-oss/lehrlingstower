@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import ScrollVideo from "./components/ScrollVideo";
 import { ScrollReveal, ScrollScale } from "./components/ScrollReveal";
 import CountUp from "./components/CountUp";
 import Header from "./components/Header";
+import translations from "./i18n/translations";
+import { useLanguage } from "./i18n/LanguageContext";
 import {
   Monitor,
   Users,
@@ -24,7 +28,13 @@ import {
   CalendarDays,
 } from "lucide-react";
 
+function useT() {
+  const { lang } = useLanguage();
+  return translations[lang];
+}
+
 function VideoHero() {
+  const t = useT();
   return (
     <ScrollVideo
       scrollContent={
@@ -33,24 +43,25 @@ function VideoHero() {
             href="#kontakt"
             className="inline-flex items-center justify-center gap-2 bg-primary text-white px-5 py-2.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
           >
-            Jetzt Termin buchen
+            {t.hero.cta}
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
           <a
             href="#so-funktionierts"
             className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm text-white px-5 py-2.5 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base font-semibold border border-white/30 hover:bg-white/30 transition-colors"
           >
-            Mehr erfahren
+            {t.hero.more}
           </a>
         </div>
       }
     >
       <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg">
-        Ausbildungen direkt in die{" "}
-        <span className="text-primary-light">Schule</span> bringen
+        {t.hero.title1}{" "}
+        <span className="text-primary-light">{t.hero.titleHighlight}</span>{" "}
+        {t.hero.title2}
       </h1>
       <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto drop-shadow">
-        Lehrlingstower verbindet regionale Betriebe mit Schülerinnen und Schülern — direkt in der Schule, täglich sichtbar, ohne Umwege. Gut für Firmen. Gut für Schulen. Gut für die Jugend.
+        {t.hero.subtitle}
       </p>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronRight className="w-8 h-8 text-white/60 rotate-90" />
@@ -59,47 +70,47 @@ function VideoHero() {
   );
 }
 
-
 function ProblemSolution() {
+  const t = useT();
   return (
     <section className="py-24 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">Unsere Mission</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">{t.mission.label}</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Ausbildung sichtbar machen — für alle
+            {t.mission.title}
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Wir bringen Betriebe und Schülerinnen zusammen — zum richtigen Zeitpunkt, am richtigen Ort. Firmen finden ihren Nachwuchs. Schulen unterstützen ihre Schüler. Und Jugendliche entdecken Chancen, die direkt vor ihrer Haustür liegen.
+            {t.mission.subtitle}
           </p>
         </ScrollReveal>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <p className="text-sm font-semibold text-rose-500 uppercase tracking-wider mb-3">
-              Die Herausforderung
+              {t.challenge.label}
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              Lehrstellen bleiben unbesetzt — und Schüler verpassen ihre Chancen
+              {t.challenge.title}
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Jedes Jahr bleiben in der Schweiz tausende Lehrstellen unbesetzt. Gleichzeitig wissen viele Jugendliche nicht, welche Ausbildungsmöglichkeiten es in ihrer Region gibt. Klassische Stellenanzeigen in Zeitungen oder auf Online-Portalen erreichen die junge Zielgruppe kaum noch.
+              {t.challenge.p1}
             </p>
             <p className="text-muted leading-relaxed">
-              Für Betriebe bedeutet das: viel Aufwand, wenig Wirkung. Für Schülerinnen und Schüler bedeutet es: verpasste Chancen, die direkt vor ihrer Haustür liegen.
+              {t.challenge.p2}
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              Unsere Lösung
+              {t.solution.label}
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              Eine Plattform — die für alle funktioniert
+              {t.solution.title}
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              Lehrlingstower stellt grosse Full-HD-Bildschirme kostenlos in Schulen auf — ausschliesslich für regionale Ausbildungsplätze und Schnuppertage. Für Schulen entsteht kein Aufwand und keine Kosten. Für Schülerinnen und Schüler eine tägliche Inspiration für ihre Zukunft.
+              {t.solution.p1}
             </p>
             <p className="text-muted leading-relaxed">
-              Für Betriebe bedeutet das: maximale Sichtbarkeit bei der richtigen Zielgruppe, zur richtigen Zeit — ohne Streuverluste, ohne Algorithmen, ohne Ad-Blocker. Einfach wirkungsvoll.
+              {t.solution.p2}
             </p>
           </ScrollReveal>
         </div>
@@ -109,6 +120,7 @@ function ProblemSolution() {
 }
 
 function AboutSection() {
+  const t = useT();
   return (
     <section className="py-24 bg-gradient-to-br from-primary-dark via-primary to-primary-dark text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-light/10 rounded-full blur-3xl" />
@@ -116,25 +128,25 @@ function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm font-semibold text-primary-light uppercase tracking-wider mb-3">
-              Über Lehrlingstower
+              {t.about.label}
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-8">
-              Wir schaffen Verbindungen, die wirklich zählen
+              {t.about.title}
             </h2>
             <p className="text-lg text-teal-100 leading-relaxed mb-6">
-              Lehrlingstower ist mehr als Werbefläche. Wir sind überzeugt: Wenn Schülerinnen und Schüler früh wissen, welche Ausbildungsmöglichkeiten es in ihrer Region gibt, treffen sie bessere Entscheidungen — für sich und für die lokale Wirtschaft.
+              {t.about.p1}
             </p>
             <p className="text-lg text-teal-100 leading-relaxed mb-6">
-              Deshalb stellen wir unsere Bildschirme kostenlos in Schulen auf und zeigen ausschliesslich echte Ausbildungsplätze und Schnuppertage aus der Region. Keine Werbung. Kein Aufwand für die Schule. Nur echter Mehrwert — für Schüler und für Betriebe gleichermassen.
+              {t.about.p2}
             </p>
             <p className="text-lg text-white font-medium leading-relaxed">
-              Betriebe gewinnen motivierten Nachwuchs. Schulen unterstützen ihre Schüler auf dem Weg ins Berufsleben. Und Jugendliche bekommen die Chance, die sie verdienen.
+              {t.about.p3}
             </p>
           </div>
           <div className="flex justify-center">
             <Image
               src="/saeule-photo.png"
-              alt="Schüler vor einer Lehrlingstower"
+              alt={t.about.imgAlt}
               width={800}
               height={450}
               className="w-full max-w-xl h-auto drop-shadow-2xl rounded-2xl"
@@ -147,74 +159,59 @@ function AboutSection() {
 }
 
 function ForSchools() {
-  const benefits = [
-    {
-      icon: Gift,
-      title: "Komplett kostenlos",
-      description:
-        "Für Schulen entstehen keinerlei Kosten. Wir liefern, installieren und betreiben den Bildschirm vollständig auf eigene Rechnung. Benötigt wird nur ein geeigneter Standort mit Stromanschluss.",
-      colorLight: "bg-teal-50",
-      colorText: "text-teal-600",
-    },
-    {
-      icon: Tv,
-      title: "Bildschirm mitbenutzen",
-      description:
-        "Die Schule erhält feste Anzeigezeit auf dem Display — für eigene Mitteilungen, Veranstaltungshinweise, Stundenpläne oder schulinterne Informationen. Ein modernes digitales Kommunikationsmedium, kostenlos.",
-      colorLight: "bg-violet-50",
-      colorText: "text-violet-600",
-    },
-    {
-      icon: CalendarDays,
-      title: "Kein Aufwand",
-      description:
-        "Wir kümmern uns um alles: Inhalt, Technik, Betrieb. Die Schule muss nichts organisieren, nichts installieren und nichts verwalten. Einfach Platz bereitstellen — der Rest läuft von selbst.",
-      colorLight: "bg-amber-50",
-      colorText: "text-amber-600",
-    },
+  const t = useT();
+  const icons = [Gift, Tv, CalendarDays];
+  const colors = [
+    { colorLight: "bg-teal-50", colorText: "text-teal-600" },
+    { colorLight: "bg-violet-50", colorText: "text-violet-600" },
+    { colorLight: "bg-amber-50", colorText: "text-amber-600" },
   ];
 
   return (
     <section id="fuer-schulen" className="py-24 bg-gradient-to-b from-teal-50/40 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">Für Schulen</span>
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 block">{t.forSchools.label}</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Ein modernes Display — kostenlos für Ihre Schule
+            {t.forSchools.title}
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Lehrlingstower ist kein Werbeauftritt, der Schulen etwas aufzwingt. Wir möchten einen echten Mehrwert schaffen — für Schülerinnen und Schüler, aber auch für die Schule selbst.
+            {t.forSchools.subtitle}
           </p>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {benefits.map((b, i) => (
-            <ScrollReveal key={b.title} delay={i * 150} className="flex">
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col w-full">
-                <div className={`w-12 h-12 ${b.colorLight} rounded-xl flex items-center justify-center mb-5`}>
-                  <b.icon className={`w-6 h-6 ${b.colorText}`} />
+          {t.forSchools.benefits.map((b, i) => {
+            const Icon = icons[i];
+            const c = colors[i];
+            return (
+              <ScrollReveal key={b.title} delay={i * 150} className="flex">
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col w-full">
+                  <div className={`w-12 h-12 ${c.colorLight} rounded-xl flex items-center justify-center mb-5`}>
+                    <Icon className={`w-6 h-6 ${c.colorText}`} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{b.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{b.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">{b.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{b.description}</p>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         <ScrollReveal>
           <div className="bg-gradient-to-br from-primary/5 to-teal-50 rounded-2xl p-8 sm:p-10 border border-primary/10 max-w-3xl mx-auto text-center">
             <School className="w-10 h-10 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-bold text-foreground mb-3">
-              Interesse? Wir kommen gerne vorbei.
+              {t.forSchools.ctaTitle}
             </h3>
             <p className="text-muted mb-6 leading-relaxed">
-              Sind Sie Schulleitung oder Sekretariat und möchten mehr erfahren? Schreiben Sie uns kurz — wir erklären das Konzept in 15 Minuten und beantworten alle Ihre Fragen.
+              {t.forSchools.ctaText}
             </p>
             <a
               href="#kontakt"
               className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
             >
-              Kontakt aufnehmen
+              {t.forSchools.ctaButton}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -225,51 +222,12 @@ function ForSchools() {
 }
 
 function HowItWorks() {
-  const steps = [
-    {
-      icon: Building2,
-      step: "01",
-      title: "Ausbildungsplatz eintragen",
-      description:
-        "Wählen Sie die Schulen in Ihrer Region und tragen Sie Ihr Ausbildungsangebot ein.",
-      color: "bg-teal-500",
-      colorLight: "bg-teal-50",
-      colorText: "text-teal-600",
-      borderColor: "border-t-teal-400",
-    },
-    {
-      icon: Monitor,
-      step: "02",
-      title: "Inhalte gestalten",
-      description:
-        "Liefern Sie Ihre eigenen Inhalte — oder lassen Sie sie von uns gestalten. Wir erstellen auf Wunsch eine professionelle Präsentation Ihres Ausbildungsangebots.",
-      color: "bg-amber-500",
-      colorLight: "bg-amber-50",
-      colorText: "text-amber-600",
-      borderColor: "border-t-amber-400",
-    },
-    {
-      icon: Users,
-      step: "03",
-      title: "Schüler:innen erreichen",
-      description:
-        "Ihre Anzeige läuft auf den 1.80m Full-HD-Bildschirmen an hochfrequentierten Orten in der Schule — Eingangsbereiche, Gänge und Aufenthaltsbereiche, wo täglich hunderte Schüler:innen vorbeikommen.",
-      color: "bg-violet-500",
-      colorLight: "bg-violet-50",
-      colorText: "text-violet-600",
-      borderColor: "border-t-violet-400",
-    },
-    {
-      icon: BarChart3,
-      step: "04",
-      title: "Resultate messen",
-      description:
-        "Verfolgen Sie, wie viele Schüler Ihren QR-Code scannen und auf Ihre Karriereseite gelangen — so sehen Sie direkt, was Ihre Anzeige bringt.",
-      color: "bg-rose-500",
-      colorLight: "bg-rose-50",
-      colorText: "text-rose-600",
-      borderColor: "border-t-rose-400",
-    },
+  const t = useT();
+  const stepMeta = [
+    { icon: Building2, color: "bg-teal-500", colorLight: "bg-teal-50", colorText: "text-teal-600", borderColor: "border-t-teal-400" },
+    { icon: Monitor, color: "bg-amber-500", colorLight: "bg-amber-50", colorText: "text-amber-600", borderColor: "border-t-amber-400" },
+    { icon: Users, color: "bg-violet-500", colorLight: "bg-violet-50", colorText: "text-violet-600", borderColor: "border-t-violet-400" },
+    { icon: BarChart3, color: "bg-rose-500", colorLight: "bg-rose-50", colorText: "text-rose-600", borderColor: "border-t-rose-400" },
   ];
 
   return (
@@ -277,33 +235,31 @@ function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            So funktionierts
+            {t.howItWorks.title}
           </h2>
           <p className="mt-4 text-lg text-muted">
-            In vier einfachen Schritten zu Ihren nächsten Lernenden
+            {t.howItWorks.subtitle}
           </p>
         </ScrollReveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
-          {steps.map((s, i) => (
-            <ScrollReveal key={s.step} delay={i * 150} className="flex">
-            <div
-              className={`bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 ${s.borderColor} flex flex-col w-full`}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`w-10 h-10 ${s.colorLight} rounded-xl flex items-center justify-center`}>
-                  <s.icon className={`w-5 h-5 ${s.colorText}`} />
+          {t.howItWorks.steps.map((step, i) => {
+            const m = stepMeta[i];
+            const stepNum = String(i + 1).padStart(2, "0");
+            return (
+              <ScrollReveal key={stepNum} delay={i * 150} className="flex">
+                <div className={`bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 ${m.borderColor} flex flex-col w-full`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-10 h-10 ${m.colorLight} rounded-xl flex items-center justify-center`}>
+                      <m.icon className={`w-5 h-5 ${m.colorText}`} />
+                    </div>
+                    <span className={`text-xs font-bold text-white ${m.color} rounded-full w-7 h-7 flex items-center justify-center`}>{stepNum}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{step.description}</p>
                 </div>
-                <span className={`text-xs font-bold text-white ${s.color} rounded-full w-7 h-7 flex items-center justify-center`}>{s.step}</span>
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {s.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                {s.description}
-              </p>
-            </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -311,49 +267,15 @@ function HowItWorks() {
 }
 
 function Benefits() {
-  const benefits = [
-    {
-      icon: Target,
-      title: "Zielgenau",
-      description:
-        "Erreichen Sie Jugendliche genau in dem Moment, in dem sie sich mit ihrer beruflichen Zukunft beschäftigen — in der Schule.",
-      colorLight: "bg-teal-50", colorText: "text-teal-600",
-    },
-    {
-      icon: QrCode,
-      title: "QR-Code inklusive",
-      description:
-        "Ein QR-Code auf dem Bildschirm leitet Schüler direkt auf Ihre Karriereseite oder Lehrstellenausschreibung.",
-      colorLight: "bg-amber-50", colorText: "text-amber-600",
-    },
-    {
-      icon: TrendingUp,
-      title: "Höchste Sichtbarkeit",
-      description:
-        "1.80m grosse Full-HD-Bildschirme an hoch frequentierten Standorten — kein Vorbeigehen ohne Hinschauen.",
-      colorLight: "bg-violet-50", colorText: "text-violet-600",
-    },
-    {
-      icon: Zap,
-      title: "Flexibel anpassbar",
-      description:
-        "Ändern Sie Ihre Inhalte jederzeit — Karriereinfos, Videos oder Stellenanzeigen. Alles in Echtzeit.",
-      colorLight: "bg-rose-50", colorText: "text-rose-600",
-    },
-    {
-      icon: School,
-      title: "Direkt in der Schule",
-      description:
-        "Die Bildschirme stehen dort, wo Schülerinnen und Schüler täglich vorbeikommen — mitten im Schulgebäude.",
-      colorLight: "bg-sky-50", colorText: "text-sky-600",
-    },
-    {
-      icon: Building2,
-      title: "Premium-Positionierung",
-      description:
-        "Positionieren Sie sich als moderner, attraktiver Lehrbetrieb — und heben Sie sich von der Konkurrenz ab.",
-      colorLight: "bg-emerald-50", colorText: "text-emerald-600",
-    },
+  const t = useT();
+  const iconList = [Target, QrCode, TrendingUp, Zap, School, Building2];
+  const colorList = [
+    { colorLight: "bg-teal-50", colorText: "text-teal-600" },
+    { colorLight: "bg-amber-50", colorText: "text-amber-600" },
+    { colorLight: "bg-violet-50", colorText: "text-violet-600" },
+    { colorLight: "bg-rose-50", colorText: "text-rose-600" },
+    { colorLight: "bg-sky-50", colorText: "text-sky-600" },
+    { colorLight: "bg-emerald-50", colorText: "text-emerald-600" },
   ];
 
   return (
@@ -362,28 +284,28 @@ function Benefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Warum Lehrlingstower?
+            {t.benefits.title}
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Was Betriebe überzeugt — und warum Schulen gerne mitmachen
+            {t.benefits.subtitle}
           </p>
         </ScrollReveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {benefits.map((b, i) => (
-            <ScrollReveal key={b.title} delay={i * 100} className="flex">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col w-full">
-              <div className={`w-12 h-12 ${b.colorLight} rounded-xl flex items-center justify-center mb-4`}>
-                <b.icon className={`w-6 h-6 ${b.colorText}`} />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {b.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed mt-auto">
-                {b.description}
-              </p>
-            </div>
-            </ScrollReveal>
-          ))}
+          {t.benefits.items.map((b, i) => {
+            const Icon = iconList[i];
+            const c = colorList[i];
+            return (
+              <ScrollReveal key={b.title} delay={i * 100} className="flex">
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col w-full">
+                  <div className={`w-12 h-12 ${c.colorLight} rounded-xl flex items-center justify-center mb-4`}>
+                    <Icon className={`w-6 h-6 ${c.colorText}`} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{b.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed mt-auto">{b.description}</p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -391,11 +313,12 @@ function Benefits() {
 }
 
 function StatsBanner() {
+  const t = useT();
   const stats = [
-    { value: "190", label: "Schultage pro Jahr erreicht", color: "text-teal-300" },
-    { value: "1.80m", label: "Full-HD Bildschirm", color: "text-amber-300" },
-    { value: "0", label: "Personalaufwand für Sie", color: "text-violet-300" },
-    { value: "100%", label: "Kostenlos für Schulen", color: "text-rose-300" },
+    { value: "190", label: t.stats.schultage, color: "text-teal-300" },
+    { value: "1.80m", label: t.stats.bildschirm, color: "text-amber-300" },
+    { value: "0", label: t.stats.personalaufwand, color: "text-violet-300" },
+    { value: "100%", label: t.stats.kostenlos, color: "text-rose-300" },
   ];
 
   return (
@@ -417,13 +340,14 @@ function StatsBanner() {
 }
 
 function ComparisonTable() {
+  const t = useT();
   const rows = [
-    { feature: "Jugendliche direkt erreicht", stifisaeule: true, print: false, online: false },
-    { feature: "Hohe Aufmerksamkeit (1.80m Bildschirm)", stifisaeule: true, print: false, online: false },
-    { feature: "Keine Streuverluste", stifisaeule: true, print: false, online: false },
-    { feature: "Kein Ad-Blocker", stifisaeule: true, print: true, online: false },
-    { feature: "Inhalte jederzeit änderbar", stifisaeule: true, print: false, online: true },
-    { feature: "Kostenlos für Schulen", stifisaeule: true, print: false, online: false },
+    { feature: t.comparison.jugendliche, stifisaeule: true, print: false, online: false },
+    { feature: t.comparison.aufmerksamkeit, stifisaeule: true, print: false, online: false },
+    { feature: t.comparison.streuverluste, stifisaeule: true, print: false, online: false },
+    { feature: t.comparison.adBlocker, stifisaeule: true, print: true, online: false },
+    { feature: t.comparison.aenderbar, stifisaeule: true, print: false, online: true },
+    { feature: t.comparison.kostenlosSchulen, stifisaeule: true, print: false, online: false },
   ];
 
   return (
@@ -431,10 +355,10 @@ function ComparisonTable() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Lehrlingstower vs. traditionelles Recruiting
+            {t.comparison.title}
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Warum digitale Bildschirme in Schulen besser funktionieren
+            {t.comparison.subtitle}
           </p>
         </ScrollReveal>
         <ScrollReveal>
@@ -444,46 +368,23 @@ function ComparisonTable() {
               <thead>
                 <tr className="bg-gradient-to-r from-primary/5 to-transparent border-b border-slate-100">
                   <th className="text-left px-6 py-4 font-medium text-muted"></th>
-                  <th className="px-6 py-4 font-bold text-primary text-center">
-                    Lehrlingstower
-                  </th>
-                  <th className="px-6 py-4 font-medium text-muted text-center">
-                    Print
-                  </th>
-                  <th className="px-6 py-4 font-medium text-muted text-center">
-                    Online-Ads
-                  </th>
+                  <th className="px-6 py-4 font-bold text-primary text-center">Lehrlingstower</th>
+                  <th className="px-6 py-4 font-medium text-muted text-center">Print</th>
+                  <th className="px-6 py-4 font-medium text-muted text-center">Online-Ads</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr
-                    key={row.feature}
-                    className={i < rows.length - 1 ? "border-b border-slate-50" : ""}
-                  >
-                    <td className="px-6 py-3.5 text-foreground font-medium">
-                      {row.feature}
+                  <tr key={row.feature} className={i < rows.length - 1 ? "border-b border-slate-50" : ""}>
+                    <td className="px-6 py-3.5 text-foreground font-medium">{row.feature}</td>
+                    <td className="px-6 py-3.5 text-center">
+                      {row.stifisaeule ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-slate-300">—</span>}
                     </td>
                     <td className="px-6 py-3.5 text-center">
-                      {row.stifisaeule ? (
-                        <Check className="w-5 h-5 text-green-500 mx-auto" />
-                      ) : (
-                        <span className="text-slate-300">—</span>
-                      )}
+                      {row.print ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-slate-300">—</span>}
                     </td>
                     <td className="px-6 py-3.5 text-center">
-                      {row.print ? (
-                        <Check className="w-5 h-5 text-green-500 mx-auto" />
-                      ) : (
-                        <span className="text-slate-300">—</span>
-                      )}
-                    </td>
-                    <td className="px-6 py-3.5 text-center">
-                      {row.online ? (
-                        <Check className="w-5 h-5 text-green-500 mx-auto" />
-                      ) : (
-                        <span className="text-slate-300">—</span>
-                      )}
+                      {row.online ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-slate-300">—</span>}
                     </td>
                   </tr>
                 ))}
@@ -498,27 +399,21 @@ function ComparisonTable() {
 }
 
 function CostComparison() {
-  const traditionellProbleme = [
-    { label: "Social Media Ads (Instagram, TikTok, Facebook) — Jugendliche scrollen vorbei", icon: Zap },
-    { label: "Azubi-Portale (Indeed, StepStone) — teuer und kaum Resonanz bei Schüler:innen", icon: Monitor },
-    { label: "Lehrlingsmessen — hohe Kosten, nur 1–2 Tage Präsenz", icon: Building2 },
-    { label: "Schulbesuche — aufwendig, personalintensiv und schwer skalierbar", icon: Users },
-    { label: "Printanzeigen (Zeitung, Flyer) — kaum Reichweite bei der Zielgruppe", icon: MapPin },
-    { label: "Karriereseite auf Website — wird von Schüler:innen kaum aktiv besucht", icon: Target },
-  ];
+  const t = useT();
+  const tradIcons = [Zap, Monitor, Building2, Users, MapPin, Target];
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-amber-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm font-semibold text-rose-500 uppercase tracking-wider mb-3">
-            Kostenvergleich
+            {t.costComparison.label}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Traditionelle Azubi-Werbung vs. Lehrlingstower
+            {t.costComparison.title}
           </h2>
           <p className="text-lg text-muted">
-            Die meisten Methoden erreichen Jugendliche kaum noch — Lehrlingstower schon
+            {t.costComparison.subtitle}
           </p>
         </div>
 
@@ -529,20 +424,23 @@ function CostComparison() {
               <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center">
                 <Target className="w-5 h-5 text-rose-500" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Traditionelles Recruiting</h3>
+              <h3 className="text-xl font-bold text-foreground">{t.costComparison.tradTitle}</h3>
             </div>
-            <p className="text-sm text-muted mb-6">Was Betriebe heute typischerweise versuchen:</p>
+            <p className="text-sm text-muted mb-6">{t.costComparison.tradSubtitle}</p>
             <ul className="space-y-3 mb-8 flex-1">
-              {traditionellProbleme.map((item) => (
-                <li key={item.label} className="flex items-start gap-3">
-                  <item.icon className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground">{item.label}</span>
-                </li>
-              ))}
+              {t.costComparison.tradItems.map((item, i) => {
+                const Icon = tradIcons[i];
+                return (
+                  <li key={i} className="flex items-start gap-3">
+                    <Icon className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-foreground">{item}</span>
+                  </li>
+                );
+              })}
             </ul>
             <div className="border-t border-rose-100 pt-4 mt-auto">
-              <p className="font-bold text-rose-600 text-lg">Viel Aufwand — wenig Wirkung</p>
-              <p className="text-xs text-muted mt-1">Jugendliche werden dort nicht mehr erreicht</p>
+              <p className="font-bold text-rose-600 text-lg">{t.costComparison.tradConclusion}</p>
+              <p className="text-xs text-muted mt-1">{t.costComparison.tradNote}</p>
             </div>
           </div>
           </ScrollReveal>
@@ -551,44 +449,26 @@ function CostComparison() {
           <div className="bg-white rounded-2xl p-8 border-2 border-primary shadow-lg relative flex flex-col w-full">
             <div className="absolute -top-3 right-6">
               <span className="inline-block bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
-                Empfohlen
+                {t.costComparison.recommended}
               </span>
             </div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
                 <Monitor className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Lehrlingstower</h3>
+              <h3 className="text-xl font-bold text-foreground">{t.costComparison.ltTitle}</h3>
             </div>
-            <p className="text-sm text-muted mb-6">12 Monate Dauerpräsenz an Schulen:</p>
+            <p className="text-sm text-muted mb-6">{t.costComparison.ltSubtitle}</p>
             <ul className="space-y-4 mb-8 flex-1">
-              <li className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Schüler:innen sehen Ihren Betrieb täglich — 190 Schultage lang</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Nur regionale Betriebe — keine Konkurrenz aus anderen Branchen</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Schüler:innen scannen den QR-Code direkt auf Ihre Lehrstellenseite</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Vertrauensumfeld Schule — Jugendliche nehmen es ernst</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Startklar in wenigen Tagen — wir kümmern uns um alles</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Positionierung als moderner, attraktiver Lehrbetrieb</span>
-              </li>
+              {t.costComparison.ltItems.map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <Check className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground">{item}</span>
+                </li>
+              ))}
             </ul>
             <div className="border-t border-primary/20 pt-4">
-              <p className="text-xs text-muted mt-2">Jeden Schultag sichtbar — ein ganzes Schuljahr</p>
+              <p className="text-xs text-muted mt-2">{t.costComparison.ltNote}</p>
             </div>
           </div>
           </ScrollReveal>
@@ -597,10 +477,10 @@ function CostComparison() {
         <ScrollReveal>
         <div className="text-center mt-12">
           <p className="text-lg font-semibold text-foreground mb-2">
-            Ein Bruchteil der Kosten — und das <span className="text-primary font-bold">ganze Jahr</span> sichtbar
+            {t.costComparison.bottomTitle1} <span className="text-primary font-bold">{t.costComparison.bottomHighlight}</span> {t.costComparison.bottomTitle2}
           </p>
           <p className="text-sm text-muted">
-            Statt 1–2 Tage Messepräsenz: jeden Schultag direkt in der Schule
+            {t.costComparison.bottomNote}
           </p>
         </div>
         </ScrollReveal>
@@ -609,53 +489,21 @@ function CostComparison() {
   );
 }
 
-
 function FAQ() {
-  const faqs = [
-    {
-      q: "Wie gross sind die Bildschirme?",
-      a: "Die Lehrlingstowern sind 1.80 Meter hohe Full-HD-Bildschirme, die in Schulgebäuden aufgestellt werden.",
-    },
-    {
-      q: "Muss ich die Inhalte selbst erstellen?",
-      a: "Nein. Sie können Ihre eigenen Inhalte liefern oder sie von uns gestalten lassen — wir erstellen auf Wunsch eine professionelle Präsentation Ihres Ausbildungsangebots.",
-    },
-    {
-      q: "In welchen Kantonen ist Lehrlingstower verfügbar?",
-      a: "Kontaktieren Sie uns — wir informieren Sie gerne über die aktuell verfügbaren Standorte.",
-    },
-    {
-      q: "Wie funktioniert der QR-Code?",
-      a: "Auf Ihrer Präsentation kann ein QR-Code eingeblendet werden, der Schülerinnen und Schüler direkt auf Ihre Lehrstellenausschreibung oder Karriereseite weiterleitet.",
-    },
-    {
-      q: "Kann ich mein Ausbildungsangebot jederzeit aktualisieren?",
-      a: "Ja, Sie können Ihre Inhalte jederzeit aktualisieren — Texte, Bilder und Videos.",
-    },
-    {
-      q: "Was hat die Schule davon?",
-      a: "Die Schule erhält einen kostenlosen Full-HD-Bildschirm — inklusive Lieferung, Installation und Betrieb. Zusätzlich steht der Schule feste Anzeigezeit zur Verfügung, die sie für eigene Mitteilungen, Veranstaltungshinweise oder Informationen nutzen kann. Für die Schule entsteht kein Aufwand und keine Kosten.",
-    },
-    {
-      q: "Kann die Schule den Bildschirm für eigene Inhalte nutzen?",
-      a: "Ja. Ein fester Teil der Anzeigezeit ist für die Schule reserviert. Schulen können diesen Bereich für eigene Mitteilungen, Stundenpläne, Veranstaltungen oder andere schulinterne Informationen nutzen. Wir kümmern uns um die technische Umsetzung.",
-    },
-  ];
+  const t = useT();
 
   return (
     <section id="faq" className="py-24 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Häufige Fragen
+            {t.faq.title}
           </h2>
         </ScrollReveal>
         <div className="space-y-4">
-          {faqs.map((faq, i) => (
+          {t.faq.items.map((faq, i) => (
             <ScrollReveal key={faq.q} delay={i * 100}>
-            <details
-              className="group bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
-            >
+            <details className="group bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
               <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-sm font-semibold text-foreground list-none">
                 {faq.q}
                 <ChevronRight className="w-4 h-4 text-muted group-open:rotate-90 transition-transform" />
@@ -673,6 +521,7 @@ function FAQ() {
 }
 
 function Contact() {
+  const t = useT();
   return (
     <section id="kontakt" className="relative py-24 bg-gradient-to-br from-primary via-primary-dark to-slate-900 overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary-light/10 rounded-full blur-3xl" />
@@ -682,11 +531,10 @@ function Contact() {
           <ScrollReveal>
           <div className="text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Bereit, die nächsten Lernenden zu finden?
+              {t.contact.title}
             </h2>
             <p className="text-teal-100 text-lg mb-8 leading-relaxed">
-              Vereinbaren Sie jetzt einen kostenlosen Beratungstermin und erfahren Sie, wie
-              die Lehrlingstower Ihr Recruiting transformiert.
+              {t.contact.subtitle}
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -694,7 +542,7 @@ function Contact() {
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-teal-200">E-Mail</p>
+                  <p className="text-sm text-teal-200">{t.contact.email}</p>
                   <p className="font-semibold">info@lehrlingstower.ch</p>
                 </div>
               </div>
@@ -703,8 +551,8 @@ function Contact() {
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-sm text-teal-200">Standort</p>
-                  <p className="font-semibold">Schweiz</p>
+                  <p className="text-sm text-teal-200">{t.contact.standort}</p>
+                  <p className="font-semibold">{t.contact.land}</p>
                 </div>
               </div>
             </div>
@@ -713,7 +561,7 @@ function Contact() {
           <ScrollReveal delay={200}>
           <div className="bg-white rounded-2xl p-8 shadow-xl">
             <h3 className="text-xl font-bold text-foreground mb-6">
-              Termin vereinbaren
+              {t.contact.formTitle}
             </h3>
             <form className="space-y-4" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="3007b246-f376-47f6-85f7-ad7223ab31d8" />
@@ -721,80 +569,32 @@ function Contact() {
               <input type="hidden" name="redirect" value="false" />
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
-                    Vorname
-                  </label>
-                  <input
-                    type="text"
-                    name="Vorname"
-                    required
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                    placeholder="Max"
-                  />
+                  <label className="block text-sm font-medium text-foreground mb-1.5">{t.contact.vorname}</label>
+                  <input type="text" name="Vorname" required className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Max" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">
-                    Nachname
-                  </label>
-                  <input
-                    type="text"
-                    name="Nachname"
-                    required
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                    placeholder="Muster"
-                  />
+                  <label className="block text-sm font-medium text-foreground mb-1.5">{t.contact.nachname}</label>
+                  <input type="text" name="Nachname" required className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Muster" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
-                  Firma
-                </label>
-                <input
-                  type="text"
-                  name="Firma"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                  placeholder="Muster AG"
-                />
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t.contact.firma}</label>
+                <input type="text" name="Firma" className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Muster AG" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
-                  E-Mail
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                  placeholder="max@muster.ch"
-                />
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t.contact.emailLabel}</label>
+                <input type="email" name="email" required className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="max@muster.ch" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
-                  Telefon
-                </label>
-                <input
-                  type="tel"
-                  name="Telefon"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                  placeholder="+41 79 000 00 00"
-                />
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t.contact.telefon}</label>
+                <input type="tel" name="Telefon" className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="+41 79 000 00 00" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
-                  Nachricht (optional)
-                </label>
-                <textarea
-                  rows={3}
-                  name="Nachricht"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
-                  placeholder="Ich interessiere mich für..."
-                />
+                <label className="block text-sm font-medium text-foreground mb-1.5">{t.contact.nachricht}</label>
+                <textarea rows={3} name="Nachricht" className="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none" placeholder={t.contact.nachrichtPlaceholder} />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors"
-              >
-                Termin vereinbaren
+              <button type="submit" className="w-full bg-primary text-white py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors">
+                {t.contact.submit}
               </button>
             </form>
           </div>
@@ -806,6 +606,7 @@ function Contact() {
 }
 
 function Footer() {
+  const t = useT();
   return (
     <footer className="bg-slate-900 text-slate-400 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -821,54 +622,28 @@ function Footer() {
               />
             </div>
             <p className="text-sm leading-relaxed max-w-sm">
-              Digitale Stellenanzeigen in Schweizer Schulen.
-              Lehrstellen dort bewerben, wo die Zukunft beginnt.
+              {t.footer.description}
             </p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Links</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">{t.footer.links}</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#so-funktionierts" className="hover:text-white transition-colors">
-                  So funktionierts
-                </a>
-              </li>
-              <li>
-                <a href="#vorteile" className="hover:text-white transition-colors">
-                  Vorteile
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
+              <li><a href="#so-funktionierts" className="hover:text-white transition-colors">{t.nav.soFunktionierts}</a></li>
+              <li><a href="#vorteile" className="hover:text-white transition-colors">{t.nav.vorteile}</a></li>
+              <li><a href="#faq" className="hover:text-white transition-colors">{t.nav.faq}</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm">Rechtliches</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm">{t.footer.rechtliches}</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="/impressum" className="hover:text-white transition-colors">
-                  Impressum
-                </a>
-              </li>
-              <li>
-                <a href="/datenschutz" className="hover:text-white transition-colors">
-                  Datenschutz
-                </a>
-              </li>
-              <li>
-                <a href="/agb" className="hover:text-white transition-colors">
-                  AGB
-                </a>
-              </li>
+              <li><a href="/impressum" className="hover:text-white transition-colors">{t.footer.impressum}</a></li>
+              <li><a href="/datenschutz" className="hover:text-white transition-colors">{t.footer.datenschutz}</a></li>
+              <li><a href="/agb" className="hover:text-white transition-colors">{t.footer.agb}</a></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-slate-800 mt-10 pt-6 text-xs text-center">
-          &copy; {new Date().getFullYear()} Lehrlingstower. Alle Rechte
-          vorbehalten.
+          &copy; {new Date().getFullYear()} {t.footer.copyright}
         </div>
       </div>
     </footer>

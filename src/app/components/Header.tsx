@@ -4,16 +4,22 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight, X, Menu } from "lucide-react";
 import ScrollHeader from "./ScrollHeader";
+import { useLanguage, Lang } from "../i18n/LanguageContext";
+import translations from "../i18n/translations";
 
-const navLinks = [
-  { href: "#fuer-schulen", label: "Für Schulen" },
-  { href: "#so-funktionierts", label: "So funktionierts" },
-  { href: "#vorteile", label: "Vorteile" },
-  { href: "#faq", label: "FAQ" },
-];
+const langLabels: Record<Lang, string> = { de: "DE", fr: "FR", it: "IT" };
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang].nav;
+
+  const navLinks = [
+    { href: "#fuer-schulen", label: t.fuerSchulen },
+    { href: "#so-funktionierts", label: t.soFunktionierts },
+    { href: "#vorteile", label: t.vorteile },
+    { href: "#faq", label: t.faq },
+  ];
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -21,7 +27,6 @@ export default function Header() {
     <>
       <ScrollHeader>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
-          {/* Logo */}
           <a href="#" className="flex items-center">
             <Image
               src="/logo.png"
@@ -40,7 +45,6 @@ export default function Header() {
             />
           </a>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} className="hover:text-white transition-colors">
@@ -49,37 +53,48 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <a
-            href="#kontakt"
-            className="hidden md:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors"
-          >
-            Termin vereinbaren
-            <ChevronRight className="w-4 h-4" />
-          </a>
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-1 text-sm font-medium">
+              {(["de", "fr", "it"] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`px-2 py-1 rounded transition-colors ${
+                    lang === l
+                      ? "lang-active text-white font-bold"
+                      : "lang-inactive hover:text-white"
+                  }`}
+                >
+                  {langLabels[l]}
+                </button>
+              ))}
+            </div>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors"
+            >
+              {t.terminVereinbaren}
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          </div>
 
-          {/* Hamburger Button (mobile) */}
           <button
             onClick={() => setMenuOpen((o) => !o)}
             className="hamburger-btn md:hidden p-2 rounded-lg transition-colors"
-            aria-label="Menü öffnen"
+            aria-label="Menu"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </ScrollHeader>
 
-      {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeMenu}
           />
-          {/* Drawer */}
           <div className="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl flex flex-col">
-            {/* Header row */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
               <span className="font-bold text-foreground text-lg">
                 Lehrlings<span className="text-primary">tower</span>.ch
@@ -87,13 +102,28 @@ export default function Header() {
               <button
                 onClick={closeMenu}
                 className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
-                aria-label="Menü schließen"
+                aria-label="Close"
               >
                 <X className="w-5 h-5 text-slate-600" />
               </button>
             </div>
 
-            {/* Nav links */}
+            <div className="flex items-center justify-center gap-2 px-6 pt-4">
+              {(["de", "fr", "it"] as Lang[]).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => { setLang(l); closeMenu(); }}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                    lang === l
+                      ? "bg-primary text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {langLabels[l]}
+                </button>
+              ))}
+            </div>
+
             <nav className="flex flex-col px-4 py-6 gap-1 flex-1">
               {navLinks.map((l) => (
                 <a
@@ -107,14 +137,13 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* CTA */}
             <div className="px-6 pb-8">
               <a
                 href="#kontakt"
                 onClick={closeMenu}
                 className="flex items-center justify-center gap-2 w-full bg-primary text-white py-4 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25"
               >
-                Termin vereinbaren
+                {t.terminVereinbaren}
                 <ChevronRight className="w-4 h-4" />
               </a>
             </div>
