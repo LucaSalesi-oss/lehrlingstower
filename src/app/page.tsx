@@ -431,7 +431,7 @@ function ComparisonTable() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Lehrlingstower vs. traditionelle Werbung
+            Lehrlingstower vs. traditionelles Recruiting
           </h2>
           <p className="mt-4 text-lg text-muted">
             Warum digitale Bildschirme in Schulen besser funktionieren
@@ -529,7 +529,7 @@ function CostComparison() {
               <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center">
                 <Target className="w-5 h-5 text-rose-500" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Traditionelle Werbung</h3>
+              <h3 className="text-xl font-bold text-foreground">Traditionelles Recruiting</h3>
             </div>
             <p className="text-sm text-muted mb-6">Was Betriebe heute typischerweise versuchen:</p>
             <ul className="space-y-3 mb-8 flex-1">
