@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "digitale Werbung Lehrling",
     "Lehrstellenwerbung digital",
     "Lehrlingstower",
-    "Azubi Werbung Schweiz",
+    "Lehrling Werbung Schweiz",
     "Bildschirm Werbung Schule",
     "Nachwuchs finden Schweiz",
   ],

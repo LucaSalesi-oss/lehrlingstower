@@ -106,13 +106,13 @@ const translations = {
     },
     costComparison: {
       label: "Kostenvergleich",
-      title: "Traditionelle Azubi-Werbung vs. Lehrlingstower",
+      title: "Traditionelle Lehrlingswerbung vs. Lehrlingstower",
       subtitle: "Die meisten Methoden erreichen Jugendliche kaum noch — Lehrlingstower schon",
       tradTitle: "Traditionelles Recruiting",
       tradSubtitle: "Was Betriebe heute typischerweise versuchen:",
       tradItems: [
         "Social Media Ads (Instagram, TikTok, Facebook) — Jugendliche scrollen vorbei",
-        "Azubi-Portale (Indeed, StepStone) — teuer und kaum Resonanz bei Schüler:innen",
+        "Lehrlings-Portale (Indeed, StepStone) — teuer und kaum Resonanz bei Schüler:innen",
         "Lehrlingsmessen — hohe Kosten, nur 1–2 Tage Präsenz",
         "Schulbesuche — aufwendig, personalintensiv und schwer skalierbar",
         "Printanzeigen (Zeitung, Flyer) — kaum Reichweite bei der Zielgruppe",
