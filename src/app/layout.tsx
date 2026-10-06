@@ -10,18 +10,25 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Lehrlingstower — Lehrstellen in Schweizer Schulen bewerben",
+  title: "Lehrlingstower — Lehrstellen direkt in Schweizer Schulen bewerben",
   description:
-    "Lehrlingstower bringt Ausbildungsplätze direkt in Schweizer Schulen. Digitale Bildschirme in Schulgebäuden — regional, sichtbar, wirkungsvoll. Ab CHF 129.–/Monat.",
+    "Lehrlingstower bringt Lehrstellen und Ausbildungsplätze direkt in Schweizer Schulen — auf digitalen Bildschirmen, täglich sichtbar für Schülerinnen und Schüler. Kostenlos für Schulen.",
   keywords: [
-    "Lehrstellen Werbung Schweiz",
-    "Ausbildungsplatz bewerben Schule",
-    "digitale Werbung Lehrling",
-    "Lehrstellenwerbung digital",
+    "Lehrstellen bewerben Schule Schweiz",
     "Lehrlingstower",
-    "Lehrling Werbung Schweiz",
-    "Bildschirm Werbung Schule",
-    "Nachwuchs finden Schweiz",
+    "digitale Lehrstellenwerbung",
+    "Lehrstellen Schweiz finden",
+    "Nachwuchs finden Lehrbetrieb",
+    "Lehrstellenmarketing Schweiz",
+    "Ausbildungsplatz Werbung Schule",
+    "Lehrstellen Bildschirm Schule",
+    "Lehrbetrieb Sichtbarkeit Schüler",
+    "Schnupperlehre bewerben",
+    "Lehrstellen Kanton",
+    "Fachkräftemangel Schweiz Lehrlinge",
+    "Berufswahl Schüler Schweiz",
+    "Lehrstellen unbesetzt Schweiz",
+    "digitale Werbung Schule Schweiz",
   ],
   authors: [{ name: "Lehrlingstower", url: "https://www.lehrlingstower.ch" }],
   creator: "Lehrlingstower",
@@ -36,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Lehrlingstower",
     title: "Lehrlingstower — Lehrstellen direkt in die Schule bringen",
     description:
-      "Digitale Bildschirme in Schweizer Schulen — präsentieren Sie Ihren Ausbildungsplatz täglich hunderten Schülerinnen und Schülern. Kostenlos für Schulen. Ab CHF 129.–/Monat.",
+      "Digitale Bildschirme in Schweizer Schulen — präsentieren Sie Ihre Lehrstelle täglich hunderten Schülerinnen und Schülern. Kostenlos für Schulen. Regional und wirkungsvoll.",
     images: [
       {
         url: "/logo.png",
@@ -50,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lehrlingstower — Lehrstellen direkt in die Schule bringen",
     description:
-      "Digitale Bildschirme in Schweizer Schulen für Ausbildungsplätze. Regional, sichtbar, wirkungsvoll.",
+      "Lehrstellen direkt in Schweizer Schulen bewerben — auf digitalen Bildschirmen, täglich sichtbar. Kostenlos für Schulen.",
     images: ["/logo.png"],
   },
   robots: {
