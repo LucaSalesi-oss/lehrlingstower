@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Datenschutz — Lehrlingstower",
+  description: "Datenschutzerklärung von Lehrlingstower — digitale Lehrstellenwerbung in Schweizer Schulen. Informationen zum Umgang mit Ihren Daten.",
 };
 
 export default function Datenschutz() {

@@ -96,28 +96,87 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Lehrlingstower",
-              url: "https://www.lehrlingstower.ch",
-              logo: "https://www.lehrlingstower.ch/logo.png",
-              description:
-                "Lehrlingstower bringt Ausbildungsplätze direkt in Schweizer Schulen — auf digitalen Bildschirmen, täglich sichtbar für Schülerinnen und Schüler.",
-              email: "info@lehrlingstower.ch",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Kolpingweg 62",
-                addressLocality: "Tuttlingen",
-                postalCode: "78532",
-                addressCountry: "DE",
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Lehrlingstower",
+                alternateName: "Lehrlingstower.ch",
+                url: "https://www.lehrlingstower.ch",
+                logo: "https://www.lehrlingstower.ch/logo.png",
+                description:
+                  "Lehrlingstower bringt Lehrstellen und Ausbildungsplätze direkt in Schweizer Schulen — auf digitalen Full-HD-Bildschirmen, täglich sichtbar für Schülerinnen und Schüler.",
+                email: "info@lehrlingstower.ch",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Kolpingweg 62",
+                  addressLocality: "Tuttlingen",
+                  postalCode: "78532",
+                  addressCountry: "DE",
+                },
+                areaServed: {
+                  "@type": "Country",
+                  name: "Schweiz",
+                },
+                founder: {
+                  "@type": "Person",
+                  name: "Luca Salesi",
+                },
+                sameAs: [],
               },
-              areaServed: "CH",
-              founder: {
-                "@type": "Person",
-                name: "Luca Salesi",
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Lehrlingstower",
+                url: "https://www.lehrlingstower.ch",
               },
-            }),
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Wie gross sind die Lehrlingstower Bildschirme?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Die Lehrlingstower sind 1.80 Meter hohe Full-HD-Bildschirme, die in Schulgebäuden aufgestellt werden.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Muss ich die Inhalte für Lehrlingstower selbst erstellen?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Nein. Sie können Ihre eigenen Inhalte liefern oder sie von Lehrlingstower gestalten lassen — wir erstellen auf Wunsch eine professionelle Präsentation Ihres Ausbildungsangebots.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "In welchen Kantonen ist Lehrlingstower verfügbar?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Kontaktieren Sie Lehrlingstower — wir informieren Sie gerne über die aktuell verfügbaren Standorte in der Schweiz.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Was kostet Lehrlingstower für Schulen?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Für Schulen ist Lehrlingstower komplett kostenlos. Wir liefern, installieren und betreiben den Bildschirm vollständig auf eigene Rechnung. Die Schule kann den Bildschirm sogar für eigene Mitteilungen mitbenutzen.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Wie funktioniert der QR-Code bei Lehrlingstower?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Auf Ihrer Lehrlingstower-Präsentation wird ein QR-Code eingeblendet, der Schülerinnen und Schüler direkt auf Ihre Lehrstellenausschreibung oder Karriereseite weiterleitet.",
+                    },
+                  },
+                ],
+              },
+            ]),
           }}
         />
         <Providers>{children}</Providers>

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Impressum — Lehrlingstower",
+  description: "Impressum von Lehrlingstower — dem digitalen Lehrstellenmarketing direkt in Schweizer Schulen. Kontakt, Adresse und rechtliche Angaben.",
 };
 
 export default function Impressum() {

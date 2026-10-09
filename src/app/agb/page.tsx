@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "AGB — Lehrlingstower",
+  description: "Allgemeine Geschäftsbedingungen von Lehrlingstower — dem digitalen Lehrstellenmarketing in Schweizer Schulen.",
 };
 
 export default function AGB() {
