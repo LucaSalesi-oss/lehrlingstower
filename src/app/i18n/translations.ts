@@ -1,6 +1,7 @@
 const translations = {
   de: {
     nav: {
+      fuerUnternehmen: "Für Unternehmen",
       fuerSchulen: "Für Schulen",
       soFunktionierts: "So funktionierts",
       vorteile: "Vorteile",
@@ -37,6 +38,28 @@ const translations = {
       bullet1: "1.80m Full-HD-Bildschirme direkt in Schulen — 190 Schultage sichtbar",
       bullet2: "Kostenlos für Schulen — kein Aufwand, keine Technik, keine Verwaltung",
       bullet3: "QR-Code auf jeder Anzeige — Schüler bewerben sich direkt per Smartphone",
+    },
+    forBusinesses: {
+      label: "Für Unternehmen",
+      title: "Finden Sie Ihre nächsten Lernenden — direkt in der Schule",
+      subtitle: "Lehrlingstower bringt Ihr Ausbildungsangebot dorthin, wo die Zukunft Ihrer Branche beginnt: direkt vor die Augen motivierter Jugendlicher.",
+      benefits: [
+        {
+          title: "190 Schultage Sichtbarkeit",
+          description: "Ihr Betrieb wird täglich auf einem 1.80m Full-HD-Bildschirm präsentiert — das ganze Schuljahr lang, direkt im Schulgebäude.",
+        },
+        {
+          title: "Nur regionale Betriebe",
+          description: "Kein Wettbewerb mit Grosskonzernen. Auf dem Lehrlingstower erscheinen ausschliesslich Ausbildungsangebote aus der Region.",
+        },
+        {
+          title: "QR-Code zur Direktbewerbung",
+          description: "Schüler scannen den QR-Code und landen direkt auf Ihrer Lehrstellenseite — ohne Umwege, ohne Streuverluste.",
+        },
+      ],
+      ctaTitle: "Bereit, Ihre Lehrstellen sichtbar zu machen?",
+      ctaText: "Vereinbaren Sie einen kostenlosen Beratungstermin. Wir zeigen Ihnen, wie Ihr Betrieb auf dem Lehrlingstower aussehen könnte — unverbindlich und in 15 Minuten erklärt.",
+      ctaButton: "Jetzt Termin buchen",
     },
     forSchools: {
       label: "Für Schulen",
@@ -192,6 +215,7 @@ const translations = {
 
   fr: {
     nav: {
+      fuerUnternehmen: "Pour les entreprises",
       fuerSchulen: "Pour les écoles",
       soFunktionierts: "Comment ça marche",
       vorteile: "Avantages",
@@ -228,6 +252,28 @@ const translations = {
       bullet1: "Écrans Full-HD de 1.80m directement dans les écoles — visibles 190 jours",
       bullet2: "Gratuit pour les écoles — aucun effort, aucune technique, aucune gestion",
       bullet3: "QR code sur chaque annonce — les élèves postulent directement via smartphone",
+    },
+    forBusinesses: {
+      label: "Pour les entreprises",
+      title: "Trouvez vos prochains apprentis — directement à l'école",
+      subtitle: "Lehrlingstower amène votre offre de formation là où commence l'avenir de votre branche : directement devant les yeux de jeunes motivés.",
+      benefits: [
+        {
+          title: "190 jours de visibilité",
+          description: "Votre entreprise est présentée chaque jour sur un écran Full-HD de 1.80m — toute l'année scolaire, directement dans l'école.",
+        },
+        {
+          title: "Uniquement des entreprises régionales",
+          description: "Pas de concurrence avec les grands groupes. Seules les offres de formation de la région apparaissent sur le Lehrlingstower.",
+        },
+        {
+          title: "QR code pour postuler directement",
+          description: "Les élèves scannent le QR code et arrivent directement sur votre page d'apprentissage — sans détour, sans perte.",
+        },
+      ],
+      ctaTitle: "Prêt à rendre vos places d'apprentissage visibles ?",
+      ctaText: "Prenez un rendez-vous gratuit. Nous vous montrons à quoi pourrait ressembler votre entreprise sur le Lehrlingstower — sans engagement, expliqué en 15 minutes.",
+      ctaButton: "Prendre rendez-vous",
     },
     forSchools: {
       label: "Pour les écoles",
@@ -383,6 +429,7 @@ const translations = {
 
   it: {
     nav: {
+      fuerUnternehmen: "Per le aziende",
       fuerSchulen: "Per le scuole",
       soFunktionierts: "Come funziona",
       vorteile: "Vantaggi",
@@ -419,6 +466,28 @@ const translations = {
       bullet1: "Schermi Full-HD da 1.80m direttamente nelle scuole — visibili per 190 giorni",
       bullet2: "Gratuito per le scuole — nessuno sforzo, nessuna tecnica, nessuna gestione",
       bullet3: "QR code su ogni annuncio — gli allievi si candidano direttamente via smartphone",
+    },
+    forBusinesses: {
+      label: "Per le aziende",
+      title: "Trovate i vostri prossimi apprendisti — direttamente a scuola",
+      subtitle: "Lehrlingstower porta la vostra offerta formativa dove inizia il futuro del vostro settore: direttamente davanti agli occhi di giovani motivati.",
+      benefits: [
+        {
+          title: "190 giorni di visibilità",
+          description: "La vostra azienda viene presentata ogni giorno su uno schermo Full-HD da 1.80m — per tutto l'anno scolastico, direttamente nell'edificio scolastico.",
+        },
+        {
+          title: "Solo aziende regionali",
+          description: "Nessuna concorrenza con i grandi gruppi. Sul Lehrlingstower appaiono esclusivamente offerte formative della regione.",
+        },
+        {
+          title: "QR code per candidarsi direttamente",
+          description: "Gli allievi scansionano il QR code e arrivano direttamente sulla vostra pagina di apprendistato — senza deviazioni, senza dispersione.",
+        },
+      ],
+      ctaTitle: "Pronti a rendere visibili i vostri posti di apprendistato?",
+      ctaText: "Fissate un appuntamento gratuito. Vi mostriamo come potrebbe apparire la vostra azienda sul Lehrlingstower — senza impegno, spiegato in 15 minuti.",
+      ctaButton: "Fissare un appuntamento",
     },
     forSchools: {
       label: "Per le scuole",

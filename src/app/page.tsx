@@ -26,6 +26,9 @@ import {
   Gift,
   Tv,
   CalendarDays,
+  Briefcase,
+  Clock,
+  MapPinned,
 } from "lucide-react";
 
 function useT() {
@@ -186,6 +189,69 @@ function AboutSection() {
             />
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ForBusinesses() {
+  const t = useT();
+  const icons = [Clock, MapPinned, QrCode];
+  const colors = [
+    { colorLight: "bg-amber-50", colorText: "text-amber-600" },
+    { colorLight: "bg-teal-50", colorText: "text-teal-600" },
+    { colorLight: "bg-violet-50", colorText: "text-violet-600" },
+  ];
+
+  return (
+    <section id="fuer-unternehmen" className="py-24 bg-gradient-to-b from-white to-amber-50/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-3 block">{t.forBusinesses.label}</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            {t.forBusinesses.title}
+          </h2>
+          <p className="mt-4 text-lg text-muted">
+            {t.forBusinesses.subtitle}
+          </p>
+        </ScrollReveal>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {t.forBusinesses.benefits.map((b, i) => {
+            const Icon = icons[i];
+            const c = colors[i];
+            return (
+              <ScrollReveal key={b.title} delay={i * 150} className="flex">
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col w-full">
+                  <div className={`w-12 h-12 ${c.colorLight} rounded-xl flex items-center justify-center mb-5`}>
+                    <Icon className={`w-6 h-6 ${c.colorText}`} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{b.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{b.description}</p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
+        </div>
+
+        <ScrollReveal>
+          <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-2xl p-8 sm:p-10 border border-amber-200/50 max-w-3xl mx-auto text-center">
+            <Briefcase className="w-10 h-10 text-amber-600 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-foreground mb-3">
+              {t.forBusinesses.ctaTitle}
+            </h3>
+            <p className="text-muted mb-6 leading-relaxed">
+              {t.forBusinesses.ctaText}
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+            >
+              {t.forBusinesses.ctaButton}
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -694,6 +760,7 @@ export default function Home() {
       <main>
         <VideoHero />
         <ProblemSolution />
+        <ForBusinesses />
         <ForSchools />
         <HowItWorks />
         <Benefits />

@@ -15,6 +15,7 @@ export default function Header() {
   const t = translations[lang].nav;
 
   const navLinks = [
+    { href: "#fuer-unternehmen", label: t.fuerUnternehmen },
     { href: "#fuer-schulen", label: t.fuerSchulen },
     { href: "#so-funktionierts", label: t.soFunktionierts },
     { href: "#vorteile", label: t.vorteile },
@@ -45,7 +46,7 @@ export default function Header() {
             />
           </a>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-8 text-sm font-medium text-white/80">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} className="hover:text-white transition-colors">
                 {l.label}
