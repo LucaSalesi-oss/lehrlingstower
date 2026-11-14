@@ -17,8 +17,6 @@ export default function Header() {
   const navLinks = [
     { href: "#fuer-unternehmen", label: t.fuerUnternehmen },
     { href: "#fuer-schulen", label: t.fuerSchulen },
-    { href: "#so-funktionierts", label: t.soFunktionierts },
-    { href: "#vorteile", label: t.vorteile },
     { href: "#faq", label: t.faq },
   ];
 
