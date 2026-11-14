@@ -95,8 +95,7 @@ function ProblemSolution() {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-5xl mx-auto">
           <ScrollReveal className="flex">
-            <div className="bg-rose-50/50 rounded-2xl p-8 border-2 border-rose-200/60 flex flex-col w-full relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-rose-100/40 rounded-full blur-2xl -mr-10 -mt-10" />
+            <div className="bg-rose-50/50 rounded-2xl p-8 border-2 border-rose-200/60 flex flex-col w-full relative">
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center">
@@ -120,8 +119,7 @@ function ProblemSolution() {
           </ScrollReveal>
 
           <ScrollReveal delay={200} className="flex">
-            <div className="bg-teal-50/50 rounded-2xl p-8 border-2 border-primary/30 flex flex-col w-full relative overflow-hidden shadow-lg shadow-primary/5">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-teal-100/40 rounded-full blur-2xl -mr-10 -mt-10" />
+            <div className="bg-teal-50/50 rounded-2xl p-8 border-2 border-primary/30 flex flex-col w-full relative shadow-lg shadow-primary/5">
               <div className="absolute -top-3 right-6">
                 <span className="inline-block bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
                   Lehrlingstower
