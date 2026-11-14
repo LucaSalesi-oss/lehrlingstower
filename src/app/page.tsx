@@ -72,6 +72,17 @@ function VideoHero() {
 
 function ProblemSolution() {
   const t = useT();
+  const problems = [
+    { icon: Target, text: t.challenge.bullet1, color: "text-rose-500", bg: "bg-rose-50" },
+    { icon: Users, text: t.challenge.bullet2, color: "text-rose-500", bg: "bg-rose-50" },
+    { icon: TrendingUp, text: t.challenge.bullet3, color: "text-rose-500", bg: "bg-rose-50" },
+  ];
+  const solutions = [
+    { icon: Monitor, text: t.solution.bullet1, color: "text-primary", bg: "bg-teal-50" },
+    { icon: School, text: t.solution.bullet2, color: "text-primary", bg: "bg-teal-50" },
+    { icon: QrCode, text: t.solution.bullet3, color: "text-primary", bg: "bg-teal-50" },
+  ];
+
   return (
     <section className="py-24 bg-gradient-to-b from-white to-teal-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,38 +91,62 @@ function ProblemSolution() {
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
             {t.mission.title}
           </h2>
-          <p className="mt-4 text-lg text-muted">
-            {t.mission.subtitle}
-          </p>
         </ScrollReveal>
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <p className="text-sm font-semibold text-rose-500 uppercase tracking-wider mb-3">
-              {t.challenge.label}
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              {t.challenge.title}
-            </h2>
-            <p className="text-muted leading-relaxed mb-4">
-              {t.challenge.p1}
-            </p>
-            <p className="text-muted leading-relaxed">
-              {t.challenge.p2}
-            </p>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-5xl mx-auto">
+          <ScrollReveal className="flex">
+            <div className="bg-rose-50/50 rounded-2xl p-8 border-2 border-rose-200/60 flex flex-col w-full relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-rose-100/40 rounded-full blur-2xl -mr-10 -mt-10" />
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center">
+                    <span className="text-rose-500 text-lg font-bold">✕</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">{t.challenge.label}</h3>
+                </div>
+                <p className="text-sm text-muted mb-6">{t.challenge.title}</p>
+                <div className="space-y-4">
+                  {problems.map((p, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className={`w-9 h-9 ${p.bg} rounded-lg flex items-center justify-center shrink-0`}>
+                        <p.icon className={`w-4 h-4 ${p.color}`} />
+                      </div>
+                      <p className="text-sm text-foreground leading-relaxed pt-1.5">{p.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              {t.solution.label}
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight mb-6">
-              {t.solution.title}
-            </h2>
-            <p className="text-muted leading-relaxed mb-4">
-              {t.solution.p1}
-            </p>
-            <p className="text-muted leading-relaxed">
-              {t.solution.p2}
-            </p>
+
+          <ScrollReveal delay={200} className="flex">
+            <div className="bg-teal-50/50 rounded-2xl p-8 border-2 border-primary/30 flex flex-col w-full relative overflow-hidden shadow-lg shadow-primary/5">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-teal-100/40 rounded-full blur-2xl -mr-10 -mt-10" />
+              <div className="absolute -top-3 right-6">
+                <span className="inline-block bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+                  Lehrlingstower
+                </span>
+              </div>
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center">
+                    <Check className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">{t.solution.label}</h3>
+                </div>
+                <p className="text-sm text-muted mb-6">{t.solution.title}</p>
+                <div className="space-y-4">
+                  {solutions.map((s, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className={`w-9 h-9 ${s.bg} rounded-lg flex items-center justify-center shrink-0`}>
+                        <s.icon className={`w-4 h-4 ${s.color}`} />
+                      </div>
+                      <p className="text-sm text-foreground leading-relaxed pt-1.5">{s.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </div>
@@ -224,10 +259,10 @@ function ForSchools() {
 function HowItWorks() {
   const t = useT();
   const stepMeta = [
-    { icon: Building2, color: "bg-teal-500", colorLight: "bg-teal-50", colorText: "text-teal-600", borderColor: "border-t-teal-400" },
-    { icon: Monitor, color: "bg-amber-500", colorLight: "bg-amber-50", colorText: "text-amber-600", borderColor: "border-t-amber-400" },
-    { icon: Users, color: "bg-violet-500", colorLight: "bg-violet-50", colorText: "text-violet-600", borderColor: "border-t-violet-400" },
-    { icon: BarChart3, color: "bg-rose-500", colorLight: "bg-rose-50", colorText: "text-rose-600", borderColor: "border-t-rose-400" },
+    { icon: Building2, color: "bg-teal-500", colorLight: "bg-teal-50", colorText: "text-teal-600", emoji: "🏢" },
+    { icon: Monitor, color: "bg-amber-500", colorLight: "bg-amber-50", colorText: "text-amber-600", emoji: "🎨" },
+    { icon: Users, color: "bg-violet-500", colorLight: "bg-violet-50", colorText: "text-violet-600", emoji: "📱" },
+    { icon: BarChart3, color: "bg-rose-500", colorLight: "bg-rose-50", colorText: "text-rose-600", emoji: "📊" },
   ];
 
   return (
@@ -241,25 +276,29 @@ function HowItWorks() {
             {t.howItWorks.subtitle}
           </p>
         </ScrollReveal>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
-          {t.howItWorks.steps.map((step, i) => {
-            const m = stepMeta[i];
-            const stepNum = String(i + 1).padStart(2, "0");
-            return (
-              <ScrollReveal key={stepNum} delay={i * 150} className="flex">
-                <div className={`bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 ${m.borderColor} flex flex-col w-full`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-10 h-10 ${m.colorLight} rounded-xl flex items-center justify-center`}>
-                      <m.icon className={`w-5 h-5 ${m.colorText}`} />
+
+        <div className="relative max-w-4xl mx-auto">
+          <div className="hidden lg:block absolute top-16 left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-0.5 bg-gradient-to-r from-teal-300 via-amber-300 via-violet-300 to-rose-300" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            {t.howItWorks.steps.map((step, i) => {
+              const m = stepMeta[i];
+              return (
+                <ScrollReveal key={i} delay={i * 150}>
+                  <div className="flex flex-col items-center text-center group">
+                    <div className={`relative w-14 h-14 ${m.color} rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform`}>
+                      <span className="text-2xl">{m.emoji}</span>
+                      <span className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center text-xs font-bold text-slate-700 shadow-md border border-slate-100">
+                        {i + 1}
+                      </span>
                     </div>
-                    <span className={`text-xs font-bold text-white ${m.color} rounded-full w-7 h-7 flex items-center justify-center`}>{stepNum}</span>
+                    <h3 className="text-base font-bold text-foreground mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted leading-relaxed">{step.description}</p>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted leading-relaxed">{step.description}</p>
-                </div>
-              </ScrollReveal>
-            );
-          })}
+                </ScrollReveal>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
