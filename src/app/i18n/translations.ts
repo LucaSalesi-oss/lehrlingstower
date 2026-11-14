@@ -49,8 +49,8 @@ const translations = {
           description: "Ihr Betrieb wird täglich auf einem 1.80m Full-HD-Bildschirm präsentiert — das ganze Schuljahr lang, direkt im Schulgebäude.",
         },
         {
-          title: "Nur regionale Betriebe",
-          description: "Kein Wettbewerb mit Grosskonzernen. Auf dem Lehrlingstower erscheinen ausschliesslich Ausbildungsangebote aus der Region.",
+          title: "Regionale Reichweite",
+          description: "Ihr Ausbildungsangebot wird gezielt in den Schulen Ihrer Region angezeigt — dort, wo Ihre zukünftigen Lernenden jeden Tag vorbeikommen.",
         },
         {
           title: "QR-Code zur Direktbewerbung",
@@ -153,7 +153,7 @@ const translations = {
       ltSubtitle: "12 Monate Dauerpräsenz an Schulen:",
       ltItems: [
         "Schüler:innen sehen Ihren Betrieb täglich — 190 Schultage lang",
-        "Nur regionale Betriebe — keine Konkurrenz aus anderen Branchen",
+        "Gezielte Platzierung in den Schulen Ihrer Region",
         "Schüler:innen scannen den QR-Code direkt auf Ihre Lehrstellenseite",
         "Vertrauensumfeld Schule — Jugendliche nehmen es ernst",
         "Startklar in wenigen Tagen — wir kümmern uns um alles",
@@ -263,8 +263,8 @@ const translations = {
           description: "Votre entreprise est présentée chaque jour sur un écran Full-HD de 1.80m — toute l'année scolaire, directement dans l'école.",
         },
         {
-          title: "Uniquement des entreprises régionales",
-          description: "Pas de concurrence avec les grands groupes. Seules les offres de formation de la région apparaissent sur le Lehrlingstower.",
+          title: "Portée régionale",
+          description: "Votre offre de formation est affichée de manière ciblée dans les écoles de votre région — là où vos futurs apprentis passent chaque jour.",
         },
         {
           title: "QR code pour postuler directement",
@@ -367,7 +367,7 @@ const translations = {
       ltSubtitle: "12 mois de présence continue dans les écoles :",
       ltItems: [
         "Les élèves voient votre entreprise chaque jour — pendant 190 jours d'école",
-        "Uniquement des entreprises régionales — aucune concurrence d'autres secteurs",
+        "Placement ciblé dans les écoles de votre région",
         "Les élèves scannent le QR code directement vers votre page d'apprentissage",
         "Environnement de confiance scolaire — les jeunes prennent cela au sérieux",
         "Prêt en quelques jours — nous nous occupons de tout",
@@ -477,8 +477,8 @@ const translations = {
           description: "La vostra azienda viene presentata ogni giorno su uno schermo Full-HD da 1.80m — per tutto l'anno scolastico, direttamente nell'edificio scolastico.",
         },
         {
-          title: "Solo aziende regionali",
-          description: "Nessuna concorrenza con i grandi gruppi. Sul Lehrlingstower appaiono esclusivamente offerte formative della regione.",
+          title: "Copertura regionale",
+          description: "La vostra offerta formativa viene mostrata in modo mirato nelle scuole della vostra regione — dove i vostri futuri apprendisti passano ogni giorno.",
         },
         {
           title: "QR code per candidarsi direttamente",
@@ -581,7 +581,7 @@ const translations = {
       ltSubtitle: "12 mesi di presenza continua nelle scuole:",
       ltItems: [
         "Gli allievi vedono la vostra azienda ogni giorno — per 190 giorni di scuola",
-        "Solo aziende regionali — nessuna concorrenza da altri settori",
+        "Posizionamento mirato nelle scuole della vostra regione",
         "Gli allievi scansionano il codice QR direttamente sulla vostra pagina di apprendistato",
         "Ambiente di fiducia scolastico — i giovani lo prendono sul serio",
         "Pronto in pochi giorni — ci occupiamo di tutto",
