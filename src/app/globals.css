@@ -36,3 +36,27 @@ html {
   50% { right: 48%; opacity: 1; }
   60% { opacity: 0; }
 }
+
+.swiss-map .maplibregl-canvas {
+  mask-image:
+    linear-gradient(to right, transparent, #000 8%, #000 92%, transparent),
+    linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  mask-composite: intersect;
+}
+
+@keyframes dialogIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes mapFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes connectorDotDown {
+  0%, 100% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  50% { top: 80%; opacity: 1; }
+  60% { opacity: 0; }
+}

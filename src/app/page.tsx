@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import ScrollVideo from "./components/ScrollVideo";
 import { ScrollReveal, ScrollScale } from "./components/ScrollReveal";
 import CountUp from "./components/CountUp";
 import Header from "./components/Header";
+import SwissMap3D from "./components/SwissMap3D";
+import RegionInquiryDialog from "./components/RegionInquiryDialog";
+import type { Region } from "./components/regions";
 import translations from "./i18n/translations";
 import { useLanguage } from "./i18n/LanguageContext";
 import {
@@ -107,26 +111,18 @@ function ProblemSolution() {
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-amber-400 rounded-full animate-[connectorDotRight_3s_ease-in-out_infinite]" />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4 items-center">
-              {/* Schüler */}
+            {/* Desktop: 3-Spalten Grid */}
+            <div className="hidden lg:grid lg:grid-cols-3 gap-4 items-center">
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-3">
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-rose-200 shadow-lg">
-                    <Image
-                      src="/person-student.webp"
-                      alt="Schüler"
-                      width={280}
-                      height={280}
-                      className="w-full h-full object-cover object-top"
-                    />
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden border-2 border-rose-200 shadow-lg">
+                    <Image src="/person-student.webp" alt="Schüler" width={280} height={280} className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
                 <div className="bg-rose-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md max-w-[220px] leading-snug">
                   &ldquo;{t.challenge.speechStudent}&rdquo;
                 </div>
               </div>
-
-              {/* Lehrlingstower Konnektor */}
               <div className="flex flex-col items-center text-center py-4">
                 <div className="relative">
                   <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-xl shadow-primary/30 animate-[pulse_3s_ease-in-out_infinite]">
@@ -136,27 +132,64 @@ function ProblemSolution() {
                 </div>
                 <p className="mt-3 text-sm font-bold text-primary">Lehrlingstower</p>
                 <p className="text-xs text-muted mt-1">verbindet beide Seiten</p>
-                {/* Mobile Pfeile */}
-                <div className="lg:hidden flex flex-col items-center gap-1 mt-2 mb-2">
-                  <div className="w-0.5 h-6 bg-gradient-to-b from-rose-300 to-primary" />
-                  <div className="w-0.5 h-6 bg-gradient-to-b from-primary to-amber-300" />
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-3">
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden border-2 border-amber-200 shadow-lg">
+                    <Image src="/person-business.webp" alt="Geschäftsführer" width={280} height={280} className="w-full h-full object-cover object-top" />
+                  </div>
+                </div>
+                <div className="bg-amber-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md max-w-[220px] leading-snug">
+                  &ldquo;{t.challenge.speechBusiness}&rdquo;
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile: Vertikaler Flow mit durchgehender Linie */}
+            <div className="lg:hidden relative flex flex-col items-center">
+              {/* Durchgehende vertikale Linie */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-rose-300 via-primary to-amber-300 opacity-40" />
+
+              {/* Schüler */}
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="w-36 h-36 rounded-2xl overflow-hidden border-2 border-rose-200 shadow-lg bg-white">
+                  <Image src="/person-student.webp" alt="Schüler" width={280} height={280} className="w-full h-full object-cover object-top" />
+                </div>
+                <div className="mt-2 bg-rose-500 text-white text-sm font-semibold px-5 py-2 rounded-xl shadow-md max-w-[220px] leading-snug">
+                  &ldquo;{t.challenge.speechStudent}&rdquo;
+                </div>
+              </div>
+
+              {/* Linie mit animiertem Dot */}
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="relative w-0.5 h-8 bg-gradient-to-b from-rose-400 to-primary">
+                  <div className="absolute left-1/2 -translate-x-1/2 w-2 h-2 bg-rose-400 rounded-full animate-[connectorDotDown_2s_ease-in-out_infinite]" />
+                </div>
+              </div>
+
+              {/* Lehrlingstower Icon */}
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="relative">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-xl shadow-primary/30">
+                    <Monitor className="w-7 h-7 text-white" />
+                  </div>
+                </div>
+                <p className="mt-1.5 text-xs font-bold text-primary">Lehrlingstower</p>
+              </div>
+
+              {/* Linie mit animiertem Dot */}
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="relative w-0.5 h-8 bg-gradient-to-b from-primary to-amber-400">
+                  <div className="absolute left-1/2 -translate-x-1/2 w-2 h-2 bg-amber-400 rounded-full animate-[connectorDotDown_2s_ease-in-out_infinite_0.5s]" />
                 </div>
               </div>
 
               {/* Geschäftsführer */}
-              <div className="flex flex-col items-center text-center">
-                <div className="relative mb-3">
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-amber-200 shadow-lg">
-                    <Image
-                      src="/person-business.webp"
-                      alt="Geschäftsführer"
-                      width={280}
-                      height={280}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="w-36 h-36 rounded-2xl overflow-hidden border-2 border-amber-200 shadow-lg bg-white">
+                  <Image src="/person-business.webp" alt="Geschäftsführer" width={280} height={280} className="w-full h-full object-cover object-top" />
                 </div>
-                <div className="bg-amber-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md max-w-[220px] leading-snug">
+                <div className="mt-2 bg-amber-500 text-white text-sm font-semibold px-5 py-2 rounded-xl shadow-md max-w-[220px] leading-snug">
                   &ldquo;{t.challenge.speechBusiness}&rdquo;
                 </div>
               </div>
@@ -478,6 +511,46 @@ function Benefits() {
               </ScrollReveal>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MapSection() {
+  const t = useT();
+  const { lang } = useLanguage();
+  const [region, setRegion] = useState<Region | null>(null);
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-8">
+          <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-3">
+            {t.map.label}
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            {t.map.title}
+          </h2>
+          <p className="mt-4 text-lg text-muted">
+            {t.map.subtitle}
+          </p>
+        </ScrollReveal>
+        <div className="motion-safe:animate-[mapFloat_7s_ease-in-out_infinite]">
+          <SwissMap3D lang={lang} pillTemplate={t.map.regionPill} onSelectRegion={setRegion} />
+        </div>
+        {region && <RegionInquiryDialog region={region} onClose={() => setRegion(null)} />}
+        <p className="mt-4 text-center text-sm text-muted">
+          <span className="hidden [@media(hover:hover)]:inline">{t.map.hintHover}</span>
+          <span className="[@media(hover:hover)]:hidden">{t.map.hintTap}</span>
+        </p>
+        <div className="mt-6 text-center">
+          <a
+            href="#kontakt"
+            className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+          >
+            {t.map.cta}
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
@@ -833,6 +906,7 @@ export default function Home() {
         <ForSchools />
         <HowItWorks />
         <Benefits />
+        <MapSection />
         <StatsBanner />
         <AboutSection />
         <CostComparison />
