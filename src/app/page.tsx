@@ -96,6 +96,44 @@ function ProblemSolution() {
           </h2>
         </ScrollReveal>
 
+        {/* Personen mit Sprechblasen */}
+        <ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto mb-20">
+            <div className="flex flex-col items-center text-center">
+              <div className="relative mb-4">
+                <Image
+                  src="/person-student.webp"
+                  alt="Schüler"
+                  width={280}
+                  height={280}
+                  className="w-48 h-48 sm:w-56 sm:h-56 object-cover object-top rounded-full"
+                />
+                <div className="absolute -top-2 -right-4 sm:-right-8 bg-rose-500 text-white text-sm font-semibold px-4 py-2.5 rounded-2xl rounded-bl-sm shadow-lg max-w-[200px] leading-snug">
+                  {t.challenge.speechStudent}
+                </div>
+              </div>
+              <p className="text-sm font-medium text-muted">Schüler:in</p>
+            </div>
+
+            <div className="flex flex-col items-center text-center">
+              <div className="relative mb-4">
+                <Image
+                  src="/person-business.webp"
+                  alt="Geschäftsführer"
+                  width={280}
+                  height={280}
+                  className="w-48 h-48 sm:w-56 sm:h-56 object-cover object-top rounded-full"
+                />
+                <div className="absolute -top-2 -left-4 sm:-left-8 bg-amber-500 text-white text-sm font-semibold px-4 py-2.5 rounded-2xl rounded-br-sm shadow-lg max-w-[220px] leading-snug">
+                  {t.challenge.speechBusiness}
+                </div>
+              </div>
+              <p className="text-sm font-medium text-muted">Geschäftsführer:in</p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Herausforderung & Lösung Karten */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-5xl mx-auto">
           <ScrollReveal className="flex">
             <div className="bg-rose-50/50 rounded-2xl p-8 border-2 border-rose-200/60 flex flex-col w-full relative">

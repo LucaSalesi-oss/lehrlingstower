@@ -24,6 +24,8 @@ const translations = {
     challenge: {
       label: "Die Herausforderung",
       title: "Lehrstellen bleiben unbesetzt — und Schüler verpassen ihre Chancen",
+      speechStudent: "Welche Lehrstellen gibt es in meiner Region?",
+      speechBusiness: "Wie finden wir unsere nächsten Lernenden?",
       p1: "Jedes Jahr bleiben in der Schweiz tausende Lehrstellen unbesetzt. Gleichzeitig wissen viele Jugendliche nicht, welche Ausbildungsmöglichkeiten es in ihrer Region gibt. Klassische Stellenanzeigen in Zeitungen oder auf Online-Portalen erreichen die junge Zielgruppe kaum noch.",
       p2: "Für Betriebe bedeutet das: viel Aufwand, wenig Wirkung. Für Schülerinnen und Schüler bedeutet es: verpasste Chancen, die direkt vor ihrer Haustür liegen.",
       bullet1: "Tausende Lehrstellen bleiben jährlich unbesetzt — Betriebe finden keinen Nachwuchs",
@@ -238,6 +240,8 @@ const translations = {
     challenge: {
       label: "Le défi",
       title: "Des places d'apprentissage restent vacantes — et les élèves ratent leurs chances",
+      speechStudent: "Quelles places d'apprentissage existent dans ma région ?",
+      speechBusiness: "Comment trouver nos prochains apprentis ?",
       p1: "Chaque année en Suisse, des milliers de places d'apprentissage restent vacantes. En même temps, de nombreux jeunes ne connaissent pas les possibilités de formation dans leur région. Les annonces classiques dans les journaux ou sur les portails en ligne n'atteignent pratiquement plus ce jeune public.",
       p2: "Pour les entreprises, cela signifie : beaucoup d'efforts, peu de résultats. Pour les élèves : des opportunités manquées, juste à côté de chez eux.",
       bullet1: "Des milliers de places d'apprentissage restent vacantes chaque année",
@@ -452,6 +456,8 @@ const translations = {
     challenge: {
       label: "La sfida",
       title: "I posti di apprendistato restano vacanti — e gli allievi perdono le loro opportunità",
+      speechStudent: "Quali posti di apprendistato ci sono nella mia regione?",
+      speechBusiness: "Come troviamo i nostri prossimi apprendisti?",
       p1: "Ogni anno in Svizzera migliaia di posti di apprendistato restano vacanti. Allo stesso tempo, molti giovani non sanno quali opportunità di formazione esistono nella loro regione. Gli annunci classici sui giornali o sui portali online non raggiungono quasi più il giovane pubblico.",
       p2: "Per le aziende questo significa: molto impegno, pochi risultati. Per gli allievi: opportunità perse, proprio dietro l'angolo.",
       bullet1: "Migliaia di posti di apprendistato restano vacanti ogni anno",
