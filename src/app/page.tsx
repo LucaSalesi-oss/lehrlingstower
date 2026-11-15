@@ -96,39 +96,70 @@ function ProblemSolution() {
           </h2>
         </ScrollReveal>
 
-        {/* Personen mit Sprechblasen */}
+        {/* Konnektor: Schüler ← Lehrlingstower → Unternehmen */}
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto mb-20">
-            <div className="flex flex-col items-center text-center">
-              <div className="relative mb-4">
-                <Image
-                  src="/person-student.webp"
-                  alt="Schüler"
-                  width={280}
-                  height={280}
-                  className="w-48 h-48 sm:w-56 sm:h-56 object-cover object-top rounded-full"
-                />
-                <div className="absolute -top-2 -right-4 sm:-right-8 bg-rose-500 text-white text-sm font-semibold px-4 py-2.5 rounded-2xl rounded-bl-sm shadow-lg max-w-[200px] leading-snug">
-                  {t.challenge.speechStudent}
-                </div>
-              </div>
-              <p className="text-sm font-medium text-muted">Schüler:in</p>
+          <div className="relative max-w-5xl mx-auto mb-20">
+            {/* Animierte Verbindungslinien (Desktop) */}
+            <div className="hidden lg:block absolute top-1/2 left-[20%] right-[20%] -translate-y-1/2 h-0.5">
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-300 via-primary to-amber-300 opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-400 via-primary to-amber-400 opacity-60 animate-[pulse_2s_ease-in-out_infinite]" />
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-rose-400 rounded-full animate-[connectorDotLeft_3s_ease-in-out_infinite]" />
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-amber-400 rounded-full animate-[connectorDotRight_3s_ease-in-out_infinite]" />
             </div>
 
-            <div className="flex flex-col items-center text-center">
-              <div className="relative mb-4">
-                <Image
-                  src="/person-business.webp"
-                  alt="Geschäftsführer"
-                  width={280}
-                  height={280}
-                  className="w-48 h-48 sm:w-56 sm:h-56 object-cover object-top rounded-full"
-                />
-                <div className="absolute -top-2 -left-4 sm:-left-8 bg-amber-500 text-white text-sm font-semibold px-4 py-2.5 rounded-2xl rounded-br-sm shadow-lg max-w-[220px] leading-snug">
-                  {t.challenge.speechBusiness}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4 items-center">
+              {/* Schüler */}
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-3">
+                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-rose-200 shadow-lg">
+                    <Image
+                      src="/person-student.webp"
+                      alt="Schüler"
+                      width={280}
+                      height={280}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+                <div className="bg-rose-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md max-w-[220px] leading-snug">
+                  &ldquo;{t.challenge.speechStudent}&rdquo;
                 </div>
               </div>
-              <p className="text-sm font-medium text-muted">Geschäftsführer:in</p>
+
+              {/* Lehrlingstower Konnektor */}
+              <div className="flex flex-col items-center text-center py-4">
+                <div className="relative">
+                  <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center shadow-xl shadow-primary/30 animate-[pulse_3s_ease-in-out_infinite]">
+                    <Monitor className="w-9 h-9 text-white" />
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 rounded-2xl animate-ping" style={{ animationDuration: "3s" }} />
+                </div>
+                <p className="mt-3 text-sm font-bold text-primary">Lehrlingstower</p>
+                <p className="text-xs text-muted mt-1">verbindet beide Seiten</p>
+                {/* Mobile Pfeile */}
+                <div className="lg:hidden flex flex-col items-center gap-1 mt-2 mb-2">
+                  <div className="w-0.5 h-6 bg-gradient-to-b from-rose-300 to-primary" />
+                  <div className="w-0.5 h-6 bg-gradient-to-b from-primary to-amber-300" />
+                </div>
+              </div>
+
+              {/* Geschäftsführer */}
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-3">
+                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-2 border-amber-200 shadow-lg">
+                    <Image
+                      src="/person-business.webp"
+                      alt="Geschäftsführer"
+                      width={280}
+                      height={280}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+                <div className="bg-amber-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md max-w-[220px] leading-snug">
+                  &ldquo;{t.challenge.speechBusiness}&rdquo;
+                </div>
+              </div>
             </div>
           </div>
         </ScrollReveal>
